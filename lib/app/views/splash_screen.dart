@@ -62,13 +62,15 @@ class _SplashScreenState extends State<SplashScreen> {
                       style: AppData.regularTextStyle.copyWith(
                         fontSize: 10,
                         height: 1,
-                        color: AppData.darkBlueColor.withOpacity(.6),
+                        color: AppData.customLightGrey,
                       ),
                     ),
                     Text(
                       "Independent University\nBangladesh.",
-                      style: AppData.regularTextStyle
-                          .copyWith(fontSize: 10, height: .9),
+                      style: AppData.regularTextStyle.copyWith(
+                        fontSize: 10,
+                        height: .9,
+                      ),
                     ),
                   ],
                 ),
@@ -83,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen> {
               style: AppData.regularTextStyle.copyWith(
                 fontSize: 10,
                 height: 1,
-                color: AppData.darkBlueColor.withOpacity(.3),
+                color: AppData.customLightGrey,
               ),
             ),
           )

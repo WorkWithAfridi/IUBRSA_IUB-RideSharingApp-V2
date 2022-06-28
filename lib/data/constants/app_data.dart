@@ -20,6 +20,8 @@ class AppData {
     color: darkBlueColor,
   );
   static const customWhite = Color(0xffFFFFFF);
+  static const customLightGrey = Color(0xffC1C4CB);
+  static const customDarkGrey = Color(0xff6A7183);
   static const customRed = Color(0xffD20714);
   static const royalBlueColor = Color(0xff1B44B0);
   static const babyBlueColor = Color(0xffE8F7FF);
@@ -30,5 +32,5 @@ class AppData {
   static const defaultElevation = 2;
   static const defaultPadding = EdgeInsets.symmetric(horizontal: 15);
   static const defaultBorderRadius = 10.00;
-  static const defaultButtonHeight = 60.00;
+  static const defaultButtonHeight = 55.00;
 }

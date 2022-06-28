@@ -5,12 +5,15 @@ import 'package:iubrsa/app/controllers/bindings/splash_screen_binding.dart';
 import 'package:iubrsa/app/views/onboarding_screen.dart';
 import 'package:iubrsa/app/views/signin_screen.dart';
 
+import '../controllers/bindings/signup_screen_binding.dart';
+import '../views/signup_screen.dart';
 import '../views/splash_screen.dart';
 
 class ROUTES {
   static get getSplashScreenRoute => "/splash_screen";
   static get getOnboardingScreenRoute => "/onboarding_screen";
   static get getSigninScreenRoute => "/signin_screen";
+  static get getSignupScreenRoute => "/signup_screen";
   static List<GetPage> routes = [
     GetPage(
       name: getSplashScreenRoute,
@@ -26,6 +29,11 @@ class ROUTES {
       name: getSigninScreenRoute,
       page: () => SigninScreen(),
       binding: SigninScreenBinding(),
+    ),
+    GetPage(
+      name: getSignupScreenRoute,
+      page: () => SignupScreen(),
+      binding: SignupScreenBinding(),
     ),
   ];
 }

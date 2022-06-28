@@ -79,7 +79,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: Text(
                           'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.',
                           style: AppData.regularTextStyle.copyWith(
-                            color: AppData.darkBlueColor.withOpacity(.6),
+                            color: AppData.customDarkGrey,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -100,18 +100,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       children: [
                         Flexible(
                           flex: 1,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: AppData.customWhite,
-                              borderRadius: BorderRadius.circular(
-                                AppData.defaultBorderRadius,
+                          child: GestureDetector(
+                            onTap: () {
+                              controller.onRegisterButtonClick();
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: AppData.customWhite,
+                                borderRadius: BorderRadius.circular(
+                                  AppData.defaultBorderRadius,
+                                ),
                               ),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              'Register',
-                              style: AppData.boldTextStyle.copyWith(
-                                fontSize: 15,
+                              alignment: Alignment.center,
+                              child: Text(
+                                'Register',
+                                style: AppData.boldTextStyle.copyWith(
+                                  color: AppData.darkBlueColor.withOpacity(.85),
+                                  fontSize: 13,
+                                ),
                               ),
                             ),
                           ),
@@ -129,7 +135,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 'Sign In',
                                 style: AppData.boldTextStyle.copyWith(
                                   color: AppData.customWhite,
-                                  fontSize: 15,
+                                  fontSize: 13,
                                 ),
                               ),
                             ),

@@ -30,13 +30,13 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: AppData.regularTextStyle.copyWith(
-          color: AppData.darkBlueColor.withOpacity(.4),
+          color: AppData.customLightGrey,
           fontWeight: FontWeight.bold,
         ),
         border: OutlineInputBorder(
           borderSide: Divider.createBorderSide(
             context,
-            color: AppData.darkBlueColor.withOpacity(.25),
+            color: AppData.customLightGrey,
             width: 1.5,
           ),
           borderRadius: BorderRadius.circular(
@@ -56,7 +56,7 @@ class CustomTextField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderSide: Divider.createBorderSide(
             context,
-            color: AppData.darkBlueColor.withOpacity(.25),
+            color: AppData.customLightGrey,
             width: 1.5,
           ),
           borderRadius: BorderRadius.circular(

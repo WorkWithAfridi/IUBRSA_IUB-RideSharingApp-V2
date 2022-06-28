@@ -3,23 +3,25 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:iubrsa/app/controllers/signin_screen_controller.dart';
+import 'package:iubrsa/app/controllers/signup_screen_controller.dart';
+import 'package:iubrsa/app/widgets/customBackButton.dart';
 import 'package:iubrsa/app/widgets/customTextField.dart';
 
 import '../../data/constants/app_data.dart';
 
-class SigninScreen extends StatefulWidget {
-  const SigninScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({Key? key}) : super(key: key);
 
   @override
-  State<SigninScreen> createState() => _SigninScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _SigninScreenState extends State<SigninScreen> {
-  final SigninScreenController controller = Get.find();
+class _SignupScreenState extends State<SignupScreen> {
+  final SignupScreenController controller = Get.find();
+
   @override
   void dispose() {
-    Get.delete<SigninScreenController>();
+    Get.delete<SignupScreenController>();
     super.dispose();
   }
 
@@ -33,6 +35,7 @@ class _SigninScreenState extends State<SigninScreen> {
             color: AppData.darkBlueColor,
           ),
         ),
+        leading: GetBackButton(),
       ),
       body: SizedBox(
         height: Get.height,
@@ -54,9 +57,9 @@ class _SigninScreenState extends State<SigninScreen> {
                             height: 10,
                           ),
                           Text(
-                            "Hello Again!",
+                            "Hello there!",
                             style: AppData.boldTextStyle.copyWith(
-                              fontSize: 20,
+                              fontSize: 22,
                               height: .95,
                               color: AppData.darkBlueColor.withOpacity(
                                 .85,
@@ -69,11 +72,11 @@ class _SigninScreenState extends State<SigninScreen> {
                             height: 10,
                           ),
                           Text(
-                            "Welcome back you've\nbeen missed!",
+                            "Please crate an account\nto continue using the app..",
                             style: AppData.lightTextStyle.copyWith(
                               color: AppData.customDarkGrey,
                               height: .95,
-                              fontSize: 18,
+                              fontSize: 16,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -91,28 +94,28 @@ class _SigninScreenState extends State<SigninScreen> {
                           ),
                           CustomTextField(
                             TEC: TextEditingController(),
+                            hint: "Enter phone number...",
+                            textInputType: TextInputType.emailAddress,
+                            maxLines: 1,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          CustomTextField(
+                            TEC: TextEditingController(),
+                            hint: "Enter student id...",
+                            textInputType: TextInputType.emailAddress,
+                            maxLines: 1,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          CustomTextField(
+                            TEC: TextEditingController(),
                             hint: "Password...",
                             textInputType: TextInputType.emailAddress,
                             maxLines: 1,
                             isPassword: true,
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text(
-                                'Recovery Password',
-                                style: AppData.regularTextStyle.copyWith(
-                                  color: AppData.customDarkGrey,
-                                  fontWeight: FontWeight.w800,
-                                ),
-                              ),
-                              const SizedBox(
-                                width: 2,
-                              ),
-                            ],
                           ),
                           const SizedBox(
                             height: 15,
@@ -133,7 +136,7 @@ class _SigninScreenState extends State<SigninScreen> {
                               ),
                               alignment: Alignment.center,
                               child: Text(
-                                'Sign In',
+                                'Next',
                                 style: AppData.boldTextStyle.copyWith(
                                   color: AppData.customWhite,
                                   fontSize: 13,
@@ -156,7 +159,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 width: 10,
                               ),
                               Text(
-                                ' Or continue with ',
+                                ' Or sign up using ',
                                 style: AppData.regularTextStyle.copyWith(
                                   color: AppData.customDarkGrey,
                                   fontWeight: FontWeight.w600,
@@ -240,9 +243,6 @@ class _SigninScreenState extends State<SigninScreen> {
                               ),
                             ],
                           ),
-                          SizedBox(
-                            height: Get.height / 10,
-                          ),
                         ],
                       ),
                     )
@@ -252,7 +252,7 @@ class _SigninScreenState extends State<SigninScreen> {
             ),
             GestureDetector(
               onTap: () {
-                controller.onRegisterNowButtonClick();
+                controller.onSigninButtonClick();
               },
               child: Container(
                 height: AppData.defaultButtonHeight,
@@ -261,13 +261,13 @@ class _SigninScreenState extends State<SigninScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Not a member? ",
+                      "Already have an account? ",
                       style: AppData.regularTextStyle.copyWith(
                           fontWeight: FontWeight.w600,
                           color: AppData.darkBlueColor.withOpacity(.8)),
                     ),
                     Text(
-                      "Register now!",
+                      "Signin!",
                       style: AppData.boldTextStyle.copyWith(
                         color: AppData.royalBlueColor,
                       ),
