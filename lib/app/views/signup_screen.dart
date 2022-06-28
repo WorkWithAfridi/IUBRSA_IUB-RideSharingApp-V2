@@ -85,6 +85,15 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                           CustomTextField(
                             TEC: TextEditingController(),
+                            hint: "Enter username...",
+                            textInputType: TextInputType.emailAddress,
+                            maxLines: 1,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          CustomTextField(
+                            TEC: TextEditingController(),
                             hint: "Enter email address...",
                             textInputType: TextInputType.emailAddress,
                             maxLines: 1,
@@ -125,21 +134,26 @@ class _SignupScreenState extends State<SignupScreen> {
                             shadowColor: AppData.babyBlueColor,
                             borderRadius: BorderRadius.circular(
                                 AppData.defaultBorderRadius),
-                            child: Container(
-                              height: AppData.defaultButtonHeight,
-                              width: Get.width,
-                              decoration: BoxDecoration(
-                                color: AppData.royalBlueColor,
-                                borderRadius: BorderRadius.circular(
-                                  AppData.defaultBorderRadius,
+                            child: GestureDetector(
+                              onTap: () {
+                                controller.onNextButtonClick();
+                              },
+                              child: Container(
+                                height: AppData.defaultButtonHeight,
+                                width: Get.width,
+                                decoration: BoxDecoration(
+                                  color: AppData.royalBlueColor,
+                                  borderRadius: BorderRadius.circular(
+                                    AppData.defaultBorderRadius,
+                                  ),
                                 ),
-                              ),
-                              alignment: Alignment.center,
-                              child: Text(
-                                'Next',
-                                style: AppData.boldTextStyle.copyWith(
-                                  color: AppData.customWhite,
-                                  fontSize: 13,
+                                alignment: Alignment.center,
+                                child: Text(
+                                  'Next',
+                                  style: AppData.boldTextStyle.copyWith(
+                                    color: AppData.customWhite,
+                                    fontSize: 13,
+                                  ),
                                 ),
                               ),
                             ),
@@ -255,7 +269,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 controller.onSigninButtonClick();
               },
               child: Container(
-                height: AppData.defaultButtonHeight,
+                height: AppData.defaultButtonHeight - 10,
                 alignment: Alignment.center,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -44,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 Container(
                   height: Get.width / 8 - 20,
                   width: 0.5,
-                  color: AppData.darkBlueColor.withOpacity(.2),
+                  color: AppData.customLightGrey,
                 ),
                 const SizedBox(
                   width: 10,
@@ -78,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Container(
-            height: AppData.defaultButtonHeight,
+            height: AppData.defaultButtonHeight - 10,
             alignment: Alignment.center,
             child: Text(
               "By Cypher90.",

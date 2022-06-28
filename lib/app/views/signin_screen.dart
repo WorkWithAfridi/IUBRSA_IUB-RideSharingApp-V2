@@ -255,7 +255,7 @@ class _SigninScreenState extends State<SigninScreen> {
                 controller.onRegisterNowButtonClick();
               },
               child: Container(
-                height: AppData.defaultButtonHeight,
+                height: AppData.defaultButtonHeight - 10,
                 alignment: Alignment.center,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

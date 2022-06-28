@@ -28,6 +28,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>The app needs to access your gallery in order for it to access your store images!</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>The app might need to access your camera microphone in order for it to record a video profile picture!</string>
+	<key>NSCameraUsageDescription</key>
+	<string>The app needs to access your camera in order for it to take a picture of your face for the profile picture!</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
