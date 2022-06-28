@@ -9,6 +9,7 @@ import 'package:iubrsa/app/widgets/customBackButton.dart';
 import 'package:iubrsa/app/widgets/customTextField.dart';
 
 import '../../data/constants/app_data.dart';
+import '../widgets/customButton.dart';
 
 class SignupReviewScreen extends StatefulWidget {
   const SignupReviewScreen({Key? key}) : super(key: key);
@@ -66,7 +67,6 @@ class _SignupReviewScreenState extends State<SignupReviewScreen> {
                           const SizedBox(
                             height: 20,
                           ),
-
                           GetBuilder<SignupScreenController>(
                             init: SignupScreenController(),
                             builder: (moduleController) {
@@ -259,34 +259,17 @@ class _SignupReviewScreenState extends State<SignupReviewScreen> {
                               ),
                             ),
                           ),
-
-                          //Other widgets
-
                           const SizedBox(
                             height: 20,
                           ),
-                          Material(
-                            elevation: 15.0,
-                            shadowColor: AppData.babyBlueColor,
-                            borderRadius: BorderRadius.circular(
-                                AppData.defaultBorderRadius),
-                            child: Container(
-                              height: AppData.defaultButtonHeight,
-                              width: Get.width,
-                              decoration: BoxDecoration(
-                                color: AppData.royalBlueColor,
-                                borderRadius: BorderRadius.circular(
-                                  AppData.defaultBorderRadius,
-                                ),
-                              ),
-                              alignment: Alignment.center,
-                              child: Text(
-                                'Register',
-                                style: AppData.boldTextStyle.copyWith(
-                                  color: AppData.customWhite,
-                                  fontSize: 13,
-                                ),
-                              ),
+                          Obx(
+                            () => CustomButton(
+                              title: "Register",
+                              callBackFunction: () {
+                                controller.onRegisterButtonClick();
+                              },
+                              isLoading:
+                                  controller.isRegisterButtonLoading.value,
                             ),
                           ),
                           const SizedBox(

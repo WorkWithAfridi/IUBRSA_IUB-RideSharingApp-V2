@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/controllers/signin_screen_controller.dart';
+import 'package:iubrsa/app/widgets/customButton.dart';
 import 'package:iubrsa/app/widgets/customTextField.dart';
 
 import '../../data/constants/app_data.dart';
@@ -117,28 +118,13 @@ class _SigninScreenState extends State<SigninScreen> {
                           const SizedBox(
                             height: 15,
                           ),
-                          Material(
-                            elevation: 15.0,
-                            shadowColor: AppData.babyBlueColor,
-                            borderRadius: BorderRadius.circular(
-                                AppData.defaultBorderRadius),
-                            child: Container(
-                              height: AppData.defaultButtonHeight,
-                              width: Get.width,
-                              decoration: BoxDecoration(
-                                color: AppData.royalBlueColor,
-                                borderRadius: BorderRadius.circular(
-                                  AppData.defaultBorderRadius,
-                                ),
-                              ),
-                              alignment: Alignment.center,
-                              child: Text(
-                                'Sign In',
-                                style: AppData.boldTextStyle.copyWith(
-                                  color: AppData.customWhite,
-                                  fontSize: 13,
-                                ),
-                              ),
+                          Obx(
+                            () => CustomButton(
+                              title: "Sign In",
+                              callBackFunction: () {
+                                controller.onSignInButtonClick();
+                              },
+                              isLoading: controller.isSignInButtonLoading.value,
                             ),
                           ),
                           const SizedBox(

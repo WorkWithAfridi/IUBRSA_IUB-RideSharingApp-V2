@@ -12,6 +12,13 @@ import '../../data/services/image_services.dart';
 
 class SignupScreenController extends GetxController {
   Uint8List? signupProfileImage;
+  var isRegisterButtonLoading = false.obs;
+
+  onRegisterButtonClick() async {
+    isRegisterButtonLoading.value = true;
+    await Future.delayed(AppData.waitTime);
+    isRegisterButtonLoading.value = false;
+  }
 
   selectProfileImage() async {
     await openPopUpToSelectImageSource();
