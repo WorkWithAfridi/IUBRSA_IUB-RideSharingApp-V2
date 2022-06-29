@@ -83,7 +83,7 @@ class _HomeframeState extends State<Homeframe> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 5,
+                      height: 10,
                     ),
                     Text(
                       'Hi, Khondakar Afridi',
@@ -343,6 +343,15 @@ class _HomeframeState extends State<Homeframe> {
                       width: 15,
                     ),
                     Shortcut(
+                      title: 'S.O.S',
+                      icon: Icons.sos,
+                      color: Colors.black,
+                      link: '',
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Shortcut(
                       title: 'iub.edu.bd',
                       icon: Icons.web,
                       color: Colors.red,
@@ -391,10 +400,54 @@ class _HomeframeState extends State<Homeframe> {
                 ),
               ),
               const SizedBox(
-                height: 25,
+                height: 35,
               ),
             ],
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppData.customWhite,
+        elevation: AppData.defaultElevation.toDouble(),
+        onPressed: () {},
+        child: const Icon(
+          Icons.add,
+          color: AppData.royalBlueColor,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: AppData.royalBlueColor,
+          unselectedItemColor: AppData.customLightGrey,
+          backgroundColor: AppData.customWhite,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          elevation: AppData.defaultElevation.toDouble(),
+          currentIndex: controller.pageIndex.value,
+          onTap: (value) {
+            controller.pageIndex.value = value;
+            controller.pageController.value.jumpToPage(
+              value,
+            );
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home_outlined,
+                size: controller.pageIndex.value == 0 ? 20 : 15,
+              ),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.list,
+                size: controller.pageIndex.value == 1 ? 20 : 15,
+              ),
+              label: "Start a new chat",
+            ),
+          ],
         ),
       ),
     );
