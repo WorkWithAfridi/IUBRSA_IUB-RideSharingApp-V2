@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:iubrsa/data/constants/app_data.dart';
 import 'package:lottie/lottie.dart';
 
 class AppIcon extends StatelessWidget {
@@ -12,7 +14,10 @@ class AppIcon extends StatelessWidget {
     return SizedBox(
       height: size,
       width: size,
-      child: LottieBuilder.asset('assets/lottie_animations/blue-tracker.json'),
+      child: SvgPicture.asset(
+        'assets/svgs/app_icon.svg',
+        color: AppData.royalBlueColor,
+      ),
     );
   }
 }

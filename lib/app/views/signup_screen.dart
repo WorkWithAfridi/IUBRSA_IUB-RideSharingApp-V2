@@ -46,9 +46,7 @@ class _SignupScreenState extends State<SignupScreen> {
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 25,
-                  ),
+                  padding: AppData.defaultPadding,
                   child: Column(
                     children: [
                       Column(
@@ -199,6 +197,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 height: AppData.defaultButtonHeight,
                                 width: Get.width / 6,
                                 decoration: BoxDecoration(
+                                  color: AppData.customWhite,
                                   borderRadius: BorderRadius.circular(
                                     AppData.defaultBorderRadius,
                                   ),
@@ -220,6 +219,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 height: AppData.defaultButtonHeight,
                                 width: Get.width / 6,
                                 decoration: BoxDecoration(
+                                  color: AppData.customWhite,
                                   borderRadius: BorderRadius.circular(
                                     AppData.defaultBorderRadius,
                                   ),
@@ -241,6 +241,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                 height: AppData.defaultButtonHeight,
                                 width: Get.width / 6,
                                 decoration: BoxDecoration(
+                                  color: AppData.customWhite,
                                   borderRadius: BorderRadius.circular(
                                     AppData.defaultBorderRadius,
                                   ),

@@ -42,9 +42,7 @@ class _SignupReviewScreenState extends State<SignupReviewScreen> {
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 25,
-                  ),
+                  padding: AppData.defaultPadding,
                   child: Column(
                     children: [
                       const SizedBox(

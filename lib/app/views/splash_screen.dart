@@ -40,14 +40,19 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AppIcon(size: Get.width / 5),
+                const AppIcon(
+                  size: 40,
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
                 Container(
                   height: Get.width / 8 - 20,
                   width: 0.5,
                   color: AppData.customLightGrey,
                 ),
                 const SizedBox(
-                  width: 10,
+                  width: 8,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -37,9 +37,7 @@ class _SignupOTPScreenState extends State<SignupOTPScreen> {
         height: Get.height,
         width: Get.width,
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 25,
-          ),
+          padding: AppData.defaultPadding,
           child: Column(
             children: [
               const SizedBox(

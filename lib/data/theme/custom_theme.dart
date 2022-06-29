@@ -3,7 +3,7 @@ import 'package:iubrsa/data/constants/app_data.dart';
 
 class IUBRSATheme {
   static ThemeData lightTheme = ThemeData.light().copyWith(
-    scaffoldBackgroundColor: AppData.customWhite,
+    scaffoldBackgroundColor: AppData.scaffoldBackgroundColor,
     primaryColor: AppData.royalBlueColor,
     brightness: Brightness.light,
     colorScheme: const ColorScheme(
@@ -21,7 +21,7 @@ class IUBRSATheme {
     ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      backgroundColor: AppData.customWhite,
+      backgroundColor: AppData.scaffoldBackgroundColor,
       elevation: 0,
     ),
   );

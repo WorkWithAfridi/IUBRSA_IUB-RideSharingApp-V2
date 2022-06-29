@@ -21,7 +21,8 @@ class AppData {
     fontWeight: FontWeight.w400,
     color: darkBlueColor,
   );
-  static const customWhite = Color(0xffFFFFFF);
+  static const customWhite = Color.fromARGB(255, 255, 255, 255);
+  static const scaffoldBackgroundColor = Color(0xffF8F8F8);
   static const customLightGrey = Color(0xffC1C4CB);
   static const customDarkGrey = Color(0xff6A7183);
   static const customRed = Color(0xffD20714);
@@ -32,7 +33,7 @@ class AppData {
 
   static const waitTime = Duration(seconds: 3);
   static const defaultElevation = 2;
-  static const defaultPadding = EdgeInsets.symmetric(horizontal: 15);
+  static const defaultPadding = EdgeInsets.symmetric(horizontal: 20);
   static const defaultBorderRadius = 10.00;
   static const defaultButtonHeight = 55.00;
 }

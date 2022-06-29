@@ -224,89 +224,99 @@ class _HomeframeState extends State<Homeframe> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const SizedBox(
-                      width: 15,
+                      width: 20,
                     ),
-                    Container(
-                      height: 180,
-                      width: Get.width / 2,
-                      decoration: BoxDecoration(
-                        color: AppData.babyBlueColor,
-                        borderRadius:
-                            BorderRadius.circular(AppData.defaultBorderRadius),
-                      ),
-                      padding: AppData.defaultPadding,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: SvgPicture.asset(
-                              'assets/svgs/classroom.svg',
-                              fit: BoxFit.contain,
+                    GestureDetector(
+                      onTap: () {
+                        controller.showActiveTrips("To");
+                      },
+                      child: Container(
+                        height: 180,
+                        width: Get.width / 2,
+                        decoration: BoxDecoration(
+                          color: AppData.babyBlueColor,
+                          borderRadius: BorderRadius.circular(
+                              AppData.defaultBorderRadius),
+                        ),
+                        padding: AppData.defaultPadding,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 80,
+                              width: 80,
+                              child: SvgPicture.asset(
+                                'assets/svgs/classroom.svg',
+                                fit: BoxFit.contain,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            'To',
-                            style: AppData.regularTextStyle,
-                          ),
-                          Text(
-                            'Independent\nUniversity\nBangladesh',
-                            style: AppData.boldTextStyle.copyWith(
-                              fontSize: 15,
-                              height: .95,
+                            const SizedBox(
+                              height: 10,
                             ),
-                          ),
-                        ],
+                            const Text(
+                              'To',
+                              style: AppData.regularTextStyle,
+                            ),
+                            Text(
+                              'Independent\nUniversity\nBangladesh',
+                              style: AppData.boldTextStyle.copyWith(
+                                fontSize: 15,
+                                height: .95,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(
                       width: 10,
                     ),
-                    Container(
-                      height: 180,
-                      width: Get.width / 2,
-                      decoration: BoxDecoration(
-                        color: AppData.creamColor,
-                        borderRadius:
-                            BorderRadius.circular(AppData.defaultBorderRadius),
-                      ),
-                      padding: AppData.defaultPadding,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 80,
-                            width: 80,
-                            child: SvgPicture.asset(
-                              'assets/svgs/home.svg',
-                              fit: BoxFit.contain,
+                    GestureDetector(
+                      onTap: () {
+                        controller.showActiveTrips("From");
+                      },
+                      child: Container(
+                        height: 180,
+                        width: Get.width / 2,
+                        decoration: BoxDecoration(
+                          color: AppData.creamColor,
+                          borderRadius: BorderRadius.circular(
+                              AppData.defaultBorderRadius),
+                        ),
+                        padding: AppData.defaultPadding,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              height: 80,
+                              width: 80,
+                              child: SvgPicture.asset(
+                                'assets/svgs/home.svg',
+                                fit: BoxFit.contain,
+                              ),
                             ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            'From',
-                            style: AppData.regularTextStyle,
-                          ),
-                          Text(
-                            'Independent\nUniversity\nBangladesh',
-                            style: AppData.boldTextStyle.copyWith(
-                              fontSize: 15,
-                              height: .95,
+                            const SizedBox(
+                              height: 10,
                             ),
-                          ),
-                        ],
+                            const Text(
+                              'From',
+                              style: AppData.regularTextStyle,
+                            ),
+                            Text(
+                              'Independent\nUniversity\nBangladesh',
+                              style: AppData.boldTextStyle.copyWith(
+                                fontSize: 15,
+                                height: .95,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(
-                      width: 15,
+                      width: 20,
                     ),
                   ],
                 ),
@@ -345,7 +355,7 @@ class _HomeframeState extends State<Homeframe> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: const [
                     SizedBox(
-                      width: 15,
+                      width: 20,
                     ),
                     Shortcut(
                       title: 'S.O.S',
@@ -399,7 +409,7 @@ class _HomeframeState extends State<Homeframe> {
                       color: Colors.red,
                     ),
                     SizedBox(
-                      width: 15,
+                      width: 20,
                     ),
                   ],
                 ),

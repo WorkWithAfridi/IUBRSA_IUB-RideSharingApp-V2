@@ -20,9 +20,7 @@ class Shortcut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-
-      },
+      onTap: () {},
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,12 +29,13 @@ class Shortcut extends StatelessWidget {
             height: AppData.defaultButtonHeight,
             width: 80,
             decoration: BoxDecoration(
+              color: AppData.customWhite,
               borderRadius: BorderRadius.circular(
                 AppData.defaultBorderRadius,
               ),
               border: Border.all(
                 width: 1,
-                color: AppData.customLightGrey,
+                color: AppData.customWhite,
               ),
             ),
             child: Icon(

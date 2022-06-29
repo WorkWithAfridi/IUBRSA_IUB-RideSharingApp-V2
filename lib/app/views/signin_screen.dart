@@ -44,9 +44,7 @@ class _SigninScreenState extends State<SigninScreen> {
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 25,
-                  ),
+                  padding: AppData.defaultPadding,
                   child: Column(
                     children: [
                       Column(
@@ -168,6 +166,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 height: AppData.defaultButtonHeight,
                                 width: 70,
                                 decoration: BoxDecoration(
+                                  color: AppData.customWhite,
                                   borderRadius: BorderRadius.circular(
                                     AppData.defaultBorderRadius,
                                   ),
@@ -189,6 +188,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 height: AppData.defaultButtonHeight,
                                 width: 70,
                                 decoration: BoxDecoration(
+                                  color: AppData.customWhite,
                                   borderRadius: BorderRadius.circular(
                                     AppData.defaultBorderRadius,
                                   ),
@@ -210,6 +210,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 height: AppData.defaultButtonHeight,
                                 width: 70,
                                 decoration: BoxDecoration(
+                                  color: AppData.customWhite,
                                   borderRadius: BorderRadius.circular(
                                     AppData.defaultBorderRadius,
                                   ),
