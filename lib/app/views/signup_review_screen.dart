@@ -26,7 +26,7 @@ class _SignupReviewScreenState extends State<SignupReviewScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "IUBRSA",
+          AppData.appName,
           style: AppData.boldTextStyle.copyWith(
             color: AppData.darkBlueColor,
           ),
@@ -41,244 +41,235 @@ class _SignupReviewScreenState extends State<SignupReviewScreen> {
             Expanded(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 25,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 25,
+                  ),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 10,
                       ),
-                      child: Column(
-                        children: [
-                          const SizedBox(
-                            height: 10,
+                      Text(
+                        "Review user details",
+                        style: AppData.boldTextStyle.copyWith(
+                          fontSize: 22,
+                          height: .95,
+                          color: AppData.darkBlueColor.withOpacity(
+                            .85,
                           ),
-                          Text(
-                            "Review user details",
-                            style: AppData.boldTextStyle.copyWith(
-                              fontSize: 22,
-                              height: .95,
-                              color: AppData.darkBlueColor.withOpacity(
-                                .85,
-                              ),
-                              fontWeight: FontWeight.w600,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          GetBuilder<SignupScreenController>(
-                            init: SignupScreenController(),
-                            builder: (moduleController) {
-                              return Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  controller.signupProfileImage == null
-                                      ? Stack(
-                                          alignment: Alignment.center,
-                                          children: [
-                                            CircleAvatar(
-                                              radius: Get.width / 5,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              child: Padding(
-                                                padding: AppData.defaultPadding,
-                                                child: SvgPicture.asset(
-                                                  'assets/svgs/user_profile_setup.svg',
-                                                  color:
-                                                      AppData.customLightGrey,
-                                                ),
-                                              ),
-                                            ),
-                                            CircleAvatar(
-                                              radius: Get.width / 5,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              child: IconButton(
-                                                onPressed: () {
-                                                  moduleController
-                                                      .selectProfileImage();
-                                                },
-                                                icon: const Icon(
-                                                  Icons.add_a_photo,
-                                                  color: AppData.royalBlueColor,
-                                                  size: 25,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        )
-                                      : CircleAvatar(
+                          fontWeight: FontWeight.w600,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      GetBuilder<SignupScreenController>(
+                        init: SignupScreenController(),
+                        builder: (moduleController) {
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              controller.signupProfileImage == null
+                                  ? Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        CircleAvatar(
                                           radius: Get.width / 5,
-                                          backgroundImage: MemoryImage(
-                                            moduleController
-                                                .signupProfileImage!,
+                                          backgroundColor: Colors.transparent,
+                                          child: Padding(
+                                            padding: AppData.defaultPadding,
+                                            child: SvgPicture.asset(
+                                              'assets/svgs/user_profile_setup.svg',
+                                              color: AppData.customLightGrey,
+                                            ),
                                           ),
                                         ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
-                                  moduleController.signupProfileImage != null
-                                      ? GestureDetector(
-                                          onTap: () {
-                                            controller
-                                                .removeSelectedProfilePictureForAccountRegistration();
-                                          },
-                                          child: Text(
-                                            "Remove image\nor select a new one",
-                                            style: AppData.regularTextStyle
-                                                .copyWith(
-                                              color: AppData.customRed,
+                                        CircleAvatar(
+                                          radius: Get.width / 5,
+                                          backgroundColor: Colors.transparent,
+                                          child: IconButton(
+                                            onPressed: () {
+                                              moduleController
+                                                  .selectProfileImage();
+                                            },
+                                            icon: const Icon(
+                                              Icons.add_a_photo,
+                                              color: AppData.royalBlueColor,
+                                              size: 25,
                                             ),
-                                            textAlign: TextAlign.center,
                                           ),
-                                        )
-                                      : const SizedBox.shrink()
-                                ],
-                              );
-                            },
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Username',
-                            style: AppData.regularTextStyle.copyWith(
-                              color: AppData.customDarkGrey,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 2,
-                          ),
-                          Container(
-                            height: AppData.defaultButtonHeight,
-                            width: Get.width,
-                            decoration: BoxDecoration(
-                              color: AppData.babyBlueColor,
-                              borderRadius: BorderRadius.circular(
-                                AppData.defaultBorderRadius,
+                                        ),
+                                      ],
+                                    )
+                                  : CircleAvatar(
+                                      radius: Get.width / 5,
+                                      backgroundImage: MemoryImage(
+                                        moduleController.signupProfileImage!,
+                                      ),
+                                    ),
+                              const SizedBox(
+                                height: 10,
                               ),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              'Khondakar Afridi',
-                              style: AppData.regularTextStyle.copyWith(
-                                fontSize: 13,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Student ID',
-                            style: AppData.regularTextStyle.copyWith(
-                              color: AppData.customDarkGrey,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 2,
-                          ),
-                          Container(
-                            height: AppData.defaultButtonHeight,
-                            width: Get.width,
-                            decoration: BoxDecoration(
-                              color: AppData.babyBlueColor,
-                              borderRadius: BorderRadius.circular(
-                                AppData.defaultBorderRadius,
-                              ),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              '1820461',
-                              style: AppData.regularTextStyle.copyWith(
-                                fontSize: 13,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Email address',
-                            style: AppData.regularTextStyle.copyWith(
-                              color: AppData.customDarkGrey,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 2,
-                          ),
-                          Container(
-                            height: AppData.defaultButtonHeight,
-                            width: Get.width,
-                            decoration: BoxDecoration(
-                              color: AppData.babyBlueColor,
-                              borderRadius: BorderRadius.circular(
-                                AppData.defaultBorderRadius,
-                              ),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              'KhondakarAfridi@gmail.com',
-                              style: AppData.regularTextStyle.copyWith(
-                                fontSize: 13,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            'Phone',
-                            style: AppData.regularTextStyle.copyWith(
-                              color: AppData.customDarkGrey,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 2,
-                          ),
-                          Container(
-                            height: AppData.defaultButtonHeight,
-                            width: Get.width,
-                            decoration: BoxDecoration(
-                              color: AppData.babyBlueColor,
-                              borderRadius: BorderRadius.circular(
-                                AppData.defaultBorderRadius,
-                              ),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              '01741499768',
-                              style: AppData.regularTextStyle.copyWith(
-                                fontSize: 13,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Obx(
-                            () => CustomButton(
-                              title: "Register",
-                              callBackFunction: () {
-                                controller.onRegisterButtonClick();
-                              },
-                              isLoading:
-                                  controller.isRegisterButtonLoading.value,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 25,
-                          ),
-                        ],
+                              moduleController.signupProfileImage != null
+                                  ? GestureDetector(
+                                      onTap: () {
+                                        controller
+                                            .removeSelectedProfilePictureForAccountRegistration();
+                                      },
+                                      child: Text(
+                                        "Remove image\nor select a new one",
+                                        style:
+                                            AppData.regularTextStyle.copyWith(
+                                          color: AppData.customRed,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    )
+                                  : const SizedBox.shrink()
+                            ],
+                          );
+                        },
                       ),
-                    )
-                  ],
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Username',
+                        style: AppData.regularTextStyle.copyWith(
+                          color: AppData.customDarkGrey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 2,
+                      ),
+                      Container(
+                        height: AppData.defaultButtonHeight,
+                        width: Get.width,
+                        decoration: BoxDecoration(
+                          color: AppData.babyBlueColor,
+                          borderRadius: BorderRadius.circular(
+                            AppData.defaultBorderRadius,
+                          ),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Khondakar Afridi',
+                          style: AppData.regularTextStyle.copyWith(
+                            fontSize: 13,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Student ID',
+                        style: AppData.regularTextStyle.copyWith(
+                          color: AppData.customDarkGrey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 2,
+                      ),
+                      Container(
+                        height: AppData.defaultButtonHeight,
+                        width: Get.width,
+                        decoration: BoxDecoration(
+                          color: AppData.babyBlueColor,
+                          borderRadius: BorderRadius.circular(
+                            AppData.defaultBorderRadius,
+                          ),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          '1820461',
+                          style: AppData.regularTextStyle.copyWith(
+                            fontSize: 13,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Email address',
+                        style: AppData.regularTextStyle.copyWith(
+                          color: AppData.customDarkGrey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 2,
+                      ),
+                      Container(
+                        height: AppData.defaultButtonHeight,
+                        width: Get.width,
+                        decoration: BoxDecoration(
+                          color: AppData.babyBlueColor,
+                          borderRadius: BorderRadius.circular(
+                            AppData.defaultBorderRadius,
+                          ),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          'KhondakarAfridi@gmail.com',
+                          style: AppData.regularTextStyle.copyWith(
+                            fontSize: 13,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Phone',
+                        style: AppData.regularTextStyle.copyWith(
+                          color: AppData.customDarkGrey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 2,
+                      ),
+                      Container(
+                        height: AppData.defaultButtonHeight,
+                        width: Get.width,
+                        decoration: BoxDecoration(
+                          color: AppData.babyBlueColor,
+                          borderRadius: BorderRadius.circular(
+                            AppData.defaultBorderRadius,
+                          ),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          '01741499768',
+                          style: AppData.regularTextStyle.copyWith(
+                            fontSize: 13,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Obx(
+                        () => CustomButton(
+                          title: "Register",
+                          callBackFunction: () {
+                            controller.onRegisterButtonClick();
+                          },
+                          isLoading: controller.isRegisterButtonLoading.value,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

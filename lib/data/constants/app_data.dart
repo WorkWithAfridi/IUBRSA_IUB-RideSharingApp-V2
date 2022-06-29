@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class AppData {
+  static String appName = "IUBRSA";
+
   static const regularTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 13,

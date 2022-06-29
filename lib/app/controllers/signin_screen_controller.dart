@@ -13,5 +13,6 @@ class SigninScreenController extends GetxController {
     isSignInButtonLoading.value = true;
     await Future.delayed(AppData.waitTime);
     isSignInButtonLoading.value = false;
+    Get.offAllNamed(ROUTES.getHomeframeRoute);
   }
 }

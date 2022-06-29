@@ -26,7 +26,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "IUBRSA",
+          AppData.appName,
           style: AppData.boldTextStyle.copyWith(
             color: AppData.darkBlueColor,
           ),

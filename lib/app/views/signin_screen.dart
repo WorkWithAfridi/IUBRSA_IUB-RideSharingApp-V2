@@ -29,7 +29,7 @@ class _SigninScreenState extends State<SigninScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "IUBRSA",
+          AppData.appName,
           style: AppData.boldTextStyle.copyWith(
             color: AppData.darkBlueColor,
           ),
@@ -43,13 +43,13 @@ class _SigninScreenState extends State<SigninScreen> {
             Expanded(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 25,
-                      ),
-                      child: Column(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 25,
+                  ),
+                  child: Column(
+                    children: [
+                      Column(
                         children: [
                           const SizedBox(
                             height: 10,
@@ -166,7 +166,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             children: [
                               Container(
                                 height: AppData.defaultButtonHeight,
-                                width: Get.width / 6,
+                                width: 70,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(
                                     AppData.defaultBorderRadius,
@@ -187,7 +187,7 @@ class _SigninScreenState extends State<SigninScreen> {
                               ),
                               Container(
                                 height: AppData.defaultButtonHeight,
-                                width: Get.width / 6,
+                                width: 70,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(
                                     AppData.defaultBorderRadius,
@@ -208,7 +208,7 @@ class _SigninScreenState extends State<SigninScreen> {
                               ),
                               Container(
                                 height: AppData.defaultButtonHeight,
-                                width: Get.width / 6,
+                                width: 70,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(
                                     AppData.defaultBorderRadius,
@@ -230,9 +230,9 @@ class _SigninScreenState extends State<SigninScreen> {
                             height: Get.height / 10,
                           ),
                         ],
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

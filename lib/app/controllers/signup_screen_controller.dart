@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:iubrsa/app/routes/app_routes.dart';
+import 'package:iubrsa/app/views/signup_otp_screen.dart';
 import 'package:iubrsa/app/views/signup_review_screen.dart';
 import 'package:iubrsa/app/widgets/app_icon.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
@@ -13,11 +14,25 @@ import '../../data/services/image_services.dart';
 class SignupScreenController extends GetxController {
   Uint8List? signupProfileImage;
   var isRegisterButtonLoading = false.obs;
+  var isConfirmOTPCodeButtonLoading = false.obs;
 
   onRegisterButtonClick() async {
     isRegisterButtonLoading.value = true;
     await Future.delayed(AppData.waitTime);
     isRegisterButtonLoading.value = false;
+
+    Get.to(
+      () => const SignupOTPScreen(),
+      transition: Transition.rightToLeft,
+      curve: Curves.easeInOut,
+    );
+  }
+
+  onConfirmOTPCodeButtonClick() async {
+    isConfirmOTPCodeButtonLoading.value = true;
+    await Future.delayed(AppData.waitTime);
+    isConfirmOTPCodeButtonLoading.value = false;
+    Get.offAllNamed(ROUTES.getHomeframeRoute);
   }
 
   selectProfileImage() async {
@@ -43,12 +58,12 @@ class SignupScreenController extends GetxController {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
-                  'IUBRSA',
+                  AppData.appName,
                   style: AppData.regularTextStyle,
                 ),
-                Text(
+                const Text(
                   'Select an image source',
                   style: AppData.boldTextStyle,
                 ),
@@ -147,7 +162,9 @@ class SignupScreenController extends GetxController {
 
   onNextButtonClick() {
     Get.to(
-      () => SignupReviewScreen(),
+      () => const SignupReviewScreen(),
+      transition: Transition.rightToLeft,
+      curve: Curves.easeInOut,
     );
   }
 }

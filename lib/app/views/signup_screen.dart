@@ -30,7 +30,7 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "IUBRSA",
+          AppData.appName,
           style: AppData.boldTextStyle.copyWith(
             color: AppData.darkBlueColor,
           ),
@@ -45,13 +45,13 @@ class _SignupScreenState extends State<SignupScreen> {
             Expanded(
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 25,
-                      ),
-                      child: Column(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 25,
+                  ),
+                  child: Column(
+                    children: [
+                      Column(
                         children: [
                           const SizedBox(
                             height: 10,
@@ -258,9 +258,9 @@ class _SignupScreenState extends State<SignupScreen> {
                             ],
                           ),
                         ],
-                      ),
-                    )
-                  ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "IUBRSA.",
+                      AppData.appName,
                       style: AppData.boldTextStyle.copyWith(fontSize: 18),
                     ),
                     Text(
