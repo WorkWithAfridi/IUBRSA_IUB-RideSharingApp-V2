@@ -34,15 +34,20 @@ class _HomeframeState extends State<Homeframe> {
             color: AppData.darkBlueColor,
           ),
         ),
-        leading: const Padding(
-          padding: EdgeInsets.only(
+        leading: Padding(
+          padding: const EdgeInsets.only(
             left: 8.0,
           ),
           child: Align(
-            child: CircleAvatar(
-              radius: 18,
-              backgroundImage: NetworkImage(
-                  'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+            child: GestureDetector(
+              onTap: () {
+                controller.onProfileImageClick();
+              },
+              child: CircleAvatar(
+                radius: 18,
+                backgroundImage: NetworkImage(
+                    'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+              ),
             ),
           ),
         ),
@@ -83,7 +88,7 @@ class _HomeframeState extends State<Homeframe> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     Text(
                       'Hi, Khondakar Afridi',
