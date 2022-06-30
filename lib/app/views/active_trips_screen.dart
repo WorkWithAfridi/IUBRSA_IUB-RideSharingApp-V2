@@ -163,7 +163,7 @@ class ActiveTripsScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      "Khondakar Morshed Afridi Afridi",
+                                      "Khondakar Morshed Afridi",
                                       style: AppData.boldTextStyle
                                           .copyWith(height: .95),
                                     ),

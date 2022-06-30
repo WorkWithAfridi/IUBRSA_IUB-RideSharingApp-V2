@@ -424,7 +424,9 @@ class _HomeframeState extends State<Homeframe> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: AppData.customWhite,
         elevation: AppData.defaultElevation.toDouble(),
-        onPressed: () {},
+        onPressed: () {
+          controller.onHomeframeFloatingActionButtonClick();
+        },
         child: const Icon(
           Icons.add,
           color: AppData.royalBlueColor,

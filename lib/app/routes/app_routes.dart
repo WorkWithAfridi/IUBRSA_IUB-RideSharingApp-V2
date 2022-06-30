@@ -3,11 +3,13 @@ import 'package:get/get.dart';
 import 'package:iubrsa/app/controllers/bindings/homeframe_bindings.dart';
 import 'package:iubrsa/app/controllers/bindings/onboarding_screen_binding.dart';
 import 'package:iubrsa/app/controllers/bindings/profile_screen_binding.dart';
+import 'package:iubrsa/app/controllers/bindings/register_a_trip_screen_binding.dart';
 import 'package:iubrsa/app/controllers/bindings/signin_screen_binding.dart';
 import 'package:iubrsa/app/controllers/bindings/splash_screen_binding.dart';
 import 'package:iubrsa/app/views/homefram.dart';
 import 'package:iubrsa/app/views/onboarding_screen.dart';
 import 'package:iubrsa/app/views/profile_screen.dart';
+import 'package:iubrsa/app/views/register_a_trip_screen.dart';
 import 'package:iubrsa/app/views/signin_screen.dart';
 
 import '../controllers/bindings/signup_screen_binding.dart';
@@ -21,6 +23,7 @@ class ROUTES {
   static get getSignupScreenRoute => "/signup_screen";
   static get getHomeframeRoute => "/homeframe";
   static get getProfileScreenRoute => "/profile_screen";
+  static get getRegisterATripScreenRoute => "/register_a_trip_screen";
 
   static List<GetPage> routes = [
     GetPage(
@@ -60,6 +63,13 @@ class ROUTES {
       name: getProfileScreenRoute,
       page: () => ProfileScreen(),
       binding: ProfileScreenBinding(),
+      transition: Transition.rightToLeft,
+      curve: Curves.easeInOut,
+    ),
+    GetPage(
+      name: getRegisterATripScreenRoute,
+      page: () => RegisterATripScreen(),
+      binding: RegisterATripScreenBinding(),
       transition: Transition.rightToLeft,
       curve: Curves.easeInOut,
     )

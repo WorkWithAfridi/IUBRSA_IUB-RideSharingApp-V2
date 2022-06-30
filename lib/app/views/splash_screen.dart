@@ -49,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 Container(
                   height: Get.width / 8 - 20,
                   width: 0.5,
-                  color: AppData.customLightGrey,
+                  color: AppData.customDarkGrey,
                 ),
                 const SizedBox(
                   width: 8,

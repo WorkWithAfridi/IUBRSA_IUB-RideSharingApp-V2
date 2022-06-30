@@ -17,7 +17,7 @@ class CustomDivider extends StatelessWidget {
       child: Container(
         height: 1,
         width: double.maxFinite,
-        color: AppData.customLightGrey,
+        color: AppData.customLightGrey.withOpacity(.5),
       ),
     );
   }
