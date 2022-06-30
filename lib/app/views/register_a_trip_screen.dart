@@ -647,10 +647,14 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
                     const SizedBox(
                       height: 8,
                     ),
-                    CustomButton(
-                      title: "Register",
-                      callBackFunction: () {},
-                      isLoading: false,
+                    Obx(
+                      () => CustomButton(
+                        title: "Register",
+                        callBackFunction: () {
+                          controller.onRegisterButtonClick();
+                        },
+                        isLoading: controller.isRegisterButtonLoading.value,
+                      ),
                     ),
                     const SizedBox(
                       height: 25,
