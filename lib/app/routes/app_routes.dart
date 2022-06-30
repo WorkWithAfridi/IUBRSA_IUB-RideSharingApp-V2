@@ -6,11 +6,13 @@ import 'package:iubrsa/app/controllers/bindings/profile_screen_binding.dart';
 import 'package:iubrsa/app/controllers/bindings/register_a_trip_screen_binding.dart';
 import 'package:iubrsa/app/controllers/bindings/signin_screen_binding.dart';
 import 'package:iubrsa/app/controllers/bindings/splash_screen_binding.dart';
+import 'package:iubrsa/app/controllers/bindings/trip_details_screen_bindings.dart';
 import 'package:iubrsa/app/views/homefram.dart';
 import 'package:iubrsa/app/views/onboarding_screen.dart';
 import 'package:iubrsa/app/views/profile_screen.dart';
 import 'package:iubrsa/app/views/register_a_trip_screen.dart';
 import 'package:iubrsa/app/views/signin_screen.dart';
+import 'package:iubrsa/app/views/trip_details_screen.dart';
 
 import '../controllers/bindings/signup_screen_binding.dart';
 import '../views/signup_screen.dart';
@@ -24,6 +26,7 @@ class ROUTES {
   static get getHomeframeRoute => "/homeframe";
   static get getProfileScreenRoute => "/profile_screen";
   static get getRegisterATripScreenRoute => "/register_a_trip_screen";
+  static get getTripDetailsScreenRoute => "/trip_details";
 
   static List<GetPage> routes = [
     GetPage(
@@ -35,7 +38,7 @@ class ROUTES {
       name: getOnboardingScreenRoute,
       page: () => OnboardingScreen(),
       binding: OnboardingScreenBindings(),
-      transition: Transition.downToUp,
+      transition: Transition.fadeIn,
       curve: Curves.easeInOut,
     ),
     GetPage(
@@ -56,7 +59,7 @@ class ROUTES {
       name: getHomeframeRoute,
       page: () => Homeframe(),
       binding: HomeframeBindings(),
-      transition: Transition.rightToLeft,
+      transition: Transition.fadeIn,
       curve: Curves.easeInOut,
     ),
     GetPage(
@@ -70,6 +73,13 @@ class ROUTES {
       name: getRegisterATripScreenRoute,
       page: () => RegisterATripScreen(),
       binding: RegisterATripScreenBinding(),
+      transition: Transition.rightToLeft,
+      curve: Curves.easeInOut,
+    ),
+    GetPage(
+      name: getTripDetailsScreenRoute,
+      page: () => TripDetailsScreen(),
+      binding: TripDetailsScreenBindings(),
       transition: Transition.rightToLeft,
       curve: Curves.easeInOut,
     )

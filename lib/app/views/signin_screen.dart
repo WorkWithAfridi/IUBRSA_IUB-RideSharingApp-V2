@@ -4,8 +4,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/controllers/signin_screen_controller.dart';
-import 'package:iubrsa/app/widgets/customButton.dart';
-import 'package:iubrsa/app/widgets/customTextField.dart';
+import 'package:iubrsa/app/widgets/custom_button.dart';
+import 'package:iubrsa/app/widgets/custom_text_field.dart';
 
 import '../../data/constants/app_data.dart';
 

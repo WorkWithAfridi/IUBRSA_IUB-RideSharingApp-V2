@@ -5,10 +5,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/controllers/register_a_trip_screen_controller.dart';
-import 'package:iubrsa/app/widgets/customBackButton.dart';
-import 'package:iubrsa/app/widgets/customButton.dart';
-import 'package:iubrsa/app/widgets/customDivider.dart';
-import 'package:iubrsa/app/widgets/customTextField.dart';
+import 'package:iubrsa/app/widgets/custom_back_button.dart';
+import 'package:iubrsa/app/widgets/custom_button.dart';
+import 'package:iubrsa/app/widgets/custom_divider.dart';
+import 'package:iubrsa/app/widgets/custom_text_field.dart';
 
 import '../../data/constants/app_data.dart';
 

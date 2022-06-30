@@ -13,22 +13,23 @@ showCustomSnackbar({
     "_",
     borderRadius: 5,
     shouldIconPulse: true,
-    boxShadows: [
-      BoxShadow(
-        offset: const Offset(2, 6),
-        color: Colors.black.withOpacity(.4),
-        blurRadius: 5,
-        spreadRadius: 3,
-      )
-    ],
+    // boxShadows: [
+    //   BoxShadow(
+    //     offset: const Offset(2, 6),
+    //     color: Colors.black.withOpacity(.4),
+    //     blurRadius: 5,
+    //     spreadRadius: 3,
+    //   )
+    // ],
     snackPosition: SnackPosition.TOP,
-    backgroundColor: Colors.white,
+    backgroundColor: AppData.royalBlueColor,
     margin: const EdgeInsets.all(10),
     duration: const Duration(seconds: 6),
     titleText: Text(
       title,
       style: AppData.boldTextStyle.copyWith(
         fontSize: 15,
+        color: Colors.white,
       ),
     ),
     icon: Padding(
@@ -40,15 +41,17 @@ showCustomSnackbar({
                 ? Icons.celebration
                 : Icons.notifications,
         color: isError
-            ? Colors.redAccent
+            ? Colors.red
             : isCelebration
-                ? Colors.greenAccent
-                : Colors.amberAccent,
+                ? Colors.green
+                : Colors.amber,
       ),
     ),
     messageText: Text(
       message,
-      style: AppData.regularTextStyle,
+      style: AppData.regularTextStyle.copyWith(
+        color: Colors.white,
+      ),
     ),
   );
 }

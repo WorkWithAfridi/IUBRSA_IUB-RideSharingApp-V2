@@ -7,7 +7,7 @@ import 'package:iubrsa/app/routes/app_routes.dart';
 import 'package:iubrsa/app/views/signup_otp_screen.dart';
 import 'package:iubrsa/app/views/signup_review_screen.dart';
 import 'package:iubrsa/app/widgets/app_icon.dart';
-import 'package:iubrsa/app/widgets/showCustomSnackbar.dart';
+import 'package:iubrsa/app/widgets/show_custom_snackbar.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 
 import '../../data/services/image_services.dart';

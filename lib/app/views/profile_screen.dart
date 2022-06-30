@@ -5,11 +5,11 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/controllers/profile_screen_controller.dart';
-import 'package:iubrsa/app/widgets/customBackButton.dart';
+import 'package:iubrsa/app/widgets/custom_back_button.dart';
 import 'package:iubrsa/app/widgets/profile_screen_settings_tile.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 
-import '../widgets/customDivider.dart';
+import '../widgets/custom_divider.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({Key? key}) : super(key: key);

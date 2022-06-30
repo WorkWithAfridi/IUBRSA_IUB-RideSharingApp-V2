@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:iubrsa/data/services/url_launcher_services.dart';
 
 import '../../data/constants/app_data.dart';
 
@@ -20,7 +21,9 @@ class Shortcut extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        UrlLauncherServices.openInBrowser(Uri.parse(link));
+      },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

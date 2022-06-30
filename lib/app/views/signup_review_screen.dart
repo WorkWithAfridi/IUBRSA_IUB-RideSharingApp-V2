@@ -5,11 +5,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/controllers/signup_screen_controller.dart';
-import 'package:iubrsa/app/widgets/customBackButton.dart';
-import 'package:iubrsa/app/widgets/customTextField.dart';
+import 'package:iubrsa/app/widgets/custom_back_button.dart';
+import 'package:iubrsa/app/widgets/custom_text_field.dart';
 
 import '../../data/constants/app_data.dart';
-import '../widgets/customButton.dart';
+import '../widgets/custom_button.dart';
 
 class SignupReviewScreen extends StatefulWidget {
   const SignupReviewScreen({Key? key}) : super(key: key);

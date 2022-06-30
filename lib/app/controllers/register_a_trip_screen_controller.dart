@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:iubrsa/app/widgets/showCustomSnackbar.dart';
+import 'package:iubrsa/app/widgets/show_custom_snackbar.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 
 class RegisterATripScreenController extends GetxController {

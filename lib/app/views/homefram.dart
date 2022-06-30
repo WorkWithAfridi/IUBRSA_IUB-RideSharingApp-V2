@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/controllers/homeframe_controller.dart';
+import 'package:iubrsa/app/widgets/google_map.dart';
 import 'package:iubrsa/app/widgets/shortcut_layout.dart';
 
 import '../../data/constants/app_data.dart';
@@ -43,9 +44,9 @@ class _HomeframeState extends State<Homeframe> {
               onTap: () {
                 controller.onProfileImageClick();
               },
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 radius: 18,
-                backgroundImage: NetworkImage(
+                backgroundImage: const NetworkImage(
                     'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
               ),
             ),
@@ -90,7 +91,7 @@ class _HomeframeState extends State<Homeframe> {
                     const SizedBox(
                       height: 5,
                     ),
-                    Text(
+                    const Text(
                       'Hi, Khondakar Afridi',
                       style: AppData.regularTextStyle,
                     ),
@@ -147,9 +148,10 @@ class _HomeframeState extends State<Homeframe> {
                       height: Get.height / 3,
                       width: Get.width,
                       decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius: BorderRadius.circular(
-                              AppData.defaultBorderRadius)),
+                        borderRadius:
+                            BorderRadius.circular(AppData.defaultBorderRadius),
+                      ),
+                      child: GetGoogleMaps(),
                     ),
                     const SizedBox(
                       height: 10,
@@ -174,7 +176,7 @@ class _HomeframeState extends State<Homeframe> {
                         const SizedBox(
                           width: 8,
                         ),
-                        Text(
+                        const Text(
                           'Bily Road,',
                           style: AppData.boldTextStyle,
                         ),
@@ -353,62 +355,93 @@ class _HomeframeState extends State<Homeframe> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const [
-                    SizedBox(
+                  children: [
+                    const SizedBox(
                       width: 20,
                     ),
-                    Shortcut(
-                      title: 'S.O.S',
-                      icon: Icons.sos,
-                      color: Colors.black,
-                      link: '',
+                    GestureDetector(
+                      onTap: () {
+                        controller.onSoSButtonClick();
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: AppData.defaultButtonHeight,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              color: AppData.customWhite,
+                              borderRadius: BorderRadius.circular(
+                                AppData.defaultBorderRadius,
+                              ),
+                              border: Border.all(
+                                width: 1,
+                                color: AppData.customWhite,
+                              ),
+                            ),
+                            child: const Icon(
+                              Icons.sos,
+                              color: Colors.black,
+                              size: 18,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 2,
+                          ),
+                          const Text(
+                            "S.O.S",
+                            style: AppData.regularTextStyle,
+                          )
+                        ],
+                      ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Shortcut(
+                    const Shortcut(
                       title: 'iub.edu.bd',
                       icon: Icons.web,
                       color: Colors.red,
-                      link: '',
+                      link: 'http://www.iub.edu.bd/',
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Shortcut(
+                    const Shortcut(
                       title: 'iRas V1',
                       icon: Icons.school,
                       color: Colors.pink,
-                      link: '',
+                      link: 'https://irasv1.iub.edu.bd/#/',
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Shortcut(
+                    const Shortcut(
                       title: 'old iRas',
                       icon: Icons.school,
-                      link: '',
+                      link: 'https://iras.iub.edu.bd/login/Default.aspx',
                       color: Colors.green,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Shortcut(
+                    const Shortcut(
                       title: 'Community',
                       icon: Icons.group,
-                      link: '',
+                      link: 'https://www.facebook.com/iub.edu',
                       color: AppData.royalBlueColor,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Shortcut(
+                    const Shortcut(
                       title: 'Traffic Alert',
                       icon: Icons.traffic,
                       link: '',
                       color: Colors.red,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                   ],
