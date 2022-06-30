@@ -45,14 +45,14 @@ class ROUTES {
       name: getSigninScreenRoute,
       page: () => SigninScreen(),
       binding: SigninScreenBinding(),
-      transition: Transition.rightToLeft,
+      transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
     GetPage(
       name: getSignupScreenRoute,
       page: () => SignupScreen(),
       binding: SignupScreenBinding(),
-      transition: Transition.rightToLeft,
+      transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
     GetPage(
@@ -66,21 +66,21 @@ class ROUTES {
       name: getProfileScreenRoute,
       page: () => ProfileScreen(),
       binding: ProfileScreenBinding(),
-      transition: Transition.rightToLeft,
+      transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
     GetPage(
       name: getRegisterATripScreenRoute,
       page: () => RegisterATripScreen(),
       binding: RegisterATripScreenBinding(),
-      transition: Transition.rightToLeft,
+      transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
     GetPage(
       name: getTripDetailsScreenRoute,
       page: () => TripDetailsScreen(),
       binding: TripDetailsScreenBindings(),
-      transition: Transition.rightToLeft,
+      transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     )
   ];

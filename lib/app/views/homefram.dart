@@ -44,10 +44,31 @@ class _HomeframeState extends State<Homeframe> {
               onTap: () {
                 controller.onProfileImageClick();
               },
-              child: const CircleAvatar(
-                radius: 18,
-                backgroundImage: const NetworkImage(
-                    'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      color: AppData.royalBlueColor,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                  ),
+                  Container(
+                    height: 35,
+                    width: 35,
+                    decoration: BoxDecoration(
+                      color: AppData.royalBlueColor,
+                      borderRadius: BorderRadius.circular(35),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(35),
+                      child: Image.network(
+                          'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

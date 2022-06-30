@@ -50,10 +50,31 @@ class ProfileScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          CircleAvatar(
-                            radius: 40,
-                            backgroundImage: NetworkImage(
-                                'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Container(
+                                height: 80,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                  color: AppData.royalBlueColor,
+                                  borderRadius: BorderRadius.circular(80),
+                                ),
+                              ),
+                              Container(
+                                height: 75,
+                                width: 75,
+                                decoration: BoxDecoration(
+                                  color: AppData.royalBlueColor,
+                                  borderRadius: BorderRadius.circular(75),
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(75),
+                                  child: Image.network(
+                                      'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+                                ),
+                              ),
+                            ],
                           ),
                           const SizedBox(
                             width: 10,

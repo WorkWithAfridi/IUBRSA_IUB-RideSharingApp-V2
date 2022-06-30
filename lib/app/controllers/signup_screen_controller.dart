@@ -24,7 +24,7 @@ class SignupScreenController extends GetxController {
 
     Get.to(
       () => const SignupOTPScreen(),
-      transition: Transition.rightToLeft,
+      transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     );
   }
@@ -169,7 +169,7 @@ class SignupScreenController extends GetxController {
   onNextButtonClick() {
     Get.to(
       () => const SignupReviewScreen(),
-      transition: Transition.rightToLeft,
+      transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     );
   }
