@@ -72,11 +72,14 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                             borderRadius:
                                 BorderRadius.circular((Get.width / 4) - 5),
                           ),
-                          child: ClipRRect(
-                            borderRadius:
-                                BorderRadius.circular((Get.width / 4) - 5),
-                            child: Image.network(
-                                'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+                          child: Hero(
+                            tag: "profile_image",
+                            child: ClipRRect(
+                              borderRadius:
+                                  BorderRadius.circular((Get.width / 4) - 5),
+                              child: Image.network(
+                                  'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+                            ),
                           ),
                         ),
                       ],
@@ -147,7 +150,7 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                 ),
                 Text(
                   'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.',
-                  style: AppData.regularTextStyle.copyWith(height: 1),
+                  style: AppData.lightTextStyle.copyWith(height: 1),
                 ),
                 const SizedBox(
                   height: 10,
@@ -177,7 +180,7 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                         ),
                         const Text(
                           'Available seats',
-                          style: AppData.regularTextStyle,
+                          style: AppData.lightTextStyle,
                         ),
                       ],
                     ),
@@ -205,7 +208,7 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                         ),
                         const Text(
                           'Ride starting/ started at',
-                          style: AppData.regularTextStyle,
+                          style: AppData.lightTextStyle,
                         ),
                       ],
                     ),

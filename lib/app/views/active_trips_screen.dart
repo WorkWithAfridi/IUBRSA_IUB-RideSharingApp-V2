@@ -178,14 +178,60 @@ class ActiveTripsScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        "Khondakar Morshed Afridi",
-                                        style: AppData.boldTextStyle
-                                            .copyWith(height: .95),
-                                      ),
-                                      Text(
-                                        "1820461",
-                                        style: AppData.lightTextStyle,
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            height: 40,
+                                            width: 40,
+                                            decoration: BoxDecoration(
+                                              color: AppData.royalBlueColor,
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                40,
+                                              ),
+                                            ),
+                                            child: Hero(
+                                              tag: "profile_image",
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                  40,
+                                                ),
+                                                child: Image.network(
+                                                    'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            width: 5,
+                                          ),
+                                          Expanded(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  "Khondakar Morshed Afridi",
+                                                  style: AppData.boldTextStyle
+                                                      .copyWith(height: .95),
+                                                  maxLines: 2,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                ),
+                                                Text(
+                                                  "1820461",
+                                                  style: AppData.lightTextStyle,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                       Row(
                                         mainAxisAlignment:
@@ -244,7 +290,7 @@ class ActiveTripsScreen extends StatelessWidget {
                                 ),
                               ),
                               Flexible(
-                                flex: 2,
+                                flex: 1,
                                 child: Container(
                                   height: double.maxFinite,
                                   width: double.maxFinite,
