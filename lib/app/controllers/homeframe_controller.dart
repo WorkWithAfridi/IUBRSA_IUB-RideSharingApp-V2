@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/routes/app_routes.dart';
 import 'package:iubrsa/app/views/active_trips_screen.dart';
+import 'package:iubrsa/app/views/map_screen.dart';
 import 'package:iubrsa/data/services/url_launcher_services.dart';
 
 import '../../data/constants/app_data.dart';
@@ -18,7 +19,15 @@ class HomeframController extends GetxController {
   showActiveTrips(String mode) {
     Get.to(
       () => ActiveTripsScreen(mode: mode),
-      transition: Transition.rightToLeft,
+      transition: Transition.leftToRight,
+      curve: Curves.easeInOut,
+    );
+  }
+
+  openGoogleMapsScreen() {
+    Get.to(
+      () => MapScreen(),
+      transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     );
   }

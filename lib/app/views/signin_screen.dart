@@ -65,14 +65,14 @@ class _SigninScreenState extends State<SigninScreen> {
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 3,
                           ),
                           Text(
                             "Welcome back you've\nbeen missed!",
                             style: AppData.lightTextStyle.copyWith(
                               color: AppData.customDarkGrey,
-                              height: .95,
-                              fontSize: 18,
+                              height: 1,
+                              fontSize: 14,
                             ),
                             textAlign: TextAlign.center,
                           ),

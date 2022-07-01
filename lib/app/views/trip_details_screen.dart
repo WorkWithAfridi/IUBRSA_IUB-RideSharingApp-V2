@@ -44,28 +44,75 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                 const SizedBox(
                   height: 5,
                 ),
-                Text(
-                  'Khondakar Afridi',
-                  style:
-                      AppData.boldTextStyle.copyWith(fontSize: 20, height: .95),
-                ),
-                Text(
-                  'is travelling from',
-                  style: AppData.regularTextStyle.copyWith(height: .95),
-                ),
-                Text(
-                  'Baily Road',
-                  style:
-                      AppData.boldTextStyle.copyWith(fontSize: 20, height: .95),
-                ),
-                Text(
-                  'to',
-                  style: AppData.regularTextStyle.copyWith(height: 1),
-                ),
-                Text(
-                  'Independent University Bangladesh',
-                  style:
-                      AppData.boldTextStyle.copyWith(fontSize: 20, height: .95),
+                Row(
+                  children: [
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          height: Get.width / 4,
+                          width: Get.width / 4,
+                          decoration: BoxDecoration(
+                            color: AppData.royalBlueColor,
+                            borderRadius: BorderRadius.circular(Get.width / 4),
+                          ),
+                        ),
+                        Container(
+                          height: (Get.width / 4) - 5,
+                          width: (Get.width / 4) - 5,
+                          decoration: BoxDecoration(
+                            color: AppData.royalBlueColor,
+                            borderRadius:
+                                BorderRadius.circular((Get.width / 4) - 5),
+                          ),
+                          child: ClipRRect(
+                            borderRadius:
+                                BorderRadius.circular((Get.width / 4) - 5),
+                            child: Image.network(
+                                'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Khondakar Afridi',
+                            style: AppData.boldTextStyle
+                                .copyWith(fontSize: 20, height: .95),
+                          ),
+                          SizedBox(
+                            height: 3,
+                          ),
+                          Text(
+                            'is travelling from',
+                            style:
+                                AppData.regularTextStyle.copyWith(height: .95),
+                          ),
+                          Text(
+                            'Baily Road',
+                            style: AppData.boldTextStyle
+                                .copyWith(fontSize: 20, height: .95),
+                          ),
+                          Text(
+                            'to',
+                            style: AppData.regularTextStyle.copyWith(height: 1),
+                          ),
+                          Text(
+                            'Independent University Bangladesh',
+                            style: AppData.boldTextStyle
+                                .copyWith(fontSize: 20, height: .95),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 10,

@@ -147,17 +147,33 @@ class _HomeframeState extends State<Homeframe> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text(
-                          'Your location',
-                          style: AppData.boldTextStyle
-                              .copyWith(fontSize: 20, height: .95),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Active rides around',
+                              style: AppData.regularTextStyle,
+                            ),
+                            Text(
+                              'Your location',
+                              style: AppData.boldTextStyle
+                                  .copyWith(fontSize: 20, height: .95),
+                            ),
+                          ],
                         ),
-                        Text(
-                          'view full map',
-                          style: AppData.regularTextStyle.copyWith(
-                            color: Colors.blue.withOpacity(.5),
-                            fontWeight: FontWeight.bold,
+                        GestureDetector(
+                          onTap: () {
+                            controller.openGoogleMapsScreen();
+                          },
+                          child: Text(
+                            'view full map',
+                            style: AppData.regularTextStyle.copyWith(
+                              color: Colors.blue.withOpacity(.5),
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
@@ -225,11 +241,16 @@ class _HomeframeState extends State<Homeframe> {
                             height: .95,
                           ),
                         ),
-                        Text(
-                          'view on map',
-                          style: AppData.regularTextStyle.copyWith(
-                            color: Colors.blue.withOpacity(.5),
-                            fontWeight: FontWeight.bold,
+                        GestureDetector(
+                          onTap: () {
+                            controller.openGoogleMapsScreen();
+                          },
+                          child: Text(
+                            'view on map',
+                            style: AppData.regularTextStyle.copyWith(
+                              color: Colors.blue.withOpacity(.5),
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],

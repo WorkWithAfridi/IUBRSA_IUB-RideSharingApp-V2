@@ -9,9 +9,11 @@ import '../../data/constants/app_data.dart';
 
 class GetGoogleMaps extends StatefulWidget {
   bool showAnimationAndBounceBetweenTwoPoints;
+  bool isScrollable;
   GetGoogleMaps({
     Key? key,
     this.showAnimationAndBounceBetweenTwoPoints = false,
+    this.isScrollable = false,
   }) : super(key: key);
 
   @override
@@ -135,11 +137,13 @@ class _GetGoogleMapsState extends State<GetGoogleMaps> {
             ),
           ),
         ),
-        Container(
-          height: double.maxFinite,
-          width: double.maxFinite,
-          color: Colors.transparent,
-        )
+        widget.isScrollable
+            ? const SizedBox.shrink()
+            : Container(
+                height: double.maxFinite,
+                width: double.maxFinite,
+                color: Colors.transparent,
+              )
       ],
     );
   }

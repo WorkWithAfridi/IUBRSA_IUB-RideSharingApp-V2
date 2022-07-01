@@ -67,14 +67,14 @@ class _SignupScreenState extends State<SignupScreen> {
                             textAlign: TextAlign.center,
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 3,
                           ),
                           Text(
                             "Please crate an account\nto continue using the app..",
                             style: AppData.lightTextStyle.copyWith(
                               color: AppData.customDarkGrey,
-                              height: .95,
-                              fontSize: 16,
+                              height: 1,
+                              fontSize: 14,
                             ),
                             textAlign: TextAlign.center,
                           ),

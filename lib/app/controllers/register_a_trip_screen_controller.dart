@@ -13,8 +13,9 @@ class RegisterATripScreenController extends GetxController {
     isRegisterButtonLoading.value = false;
     Get.back();
     showCustomSnackbar(
-      title: "Registration successful",
-      message: "Congratulations Afridi, your ride has been registered!",
+      title: "Registration successful!!",
+      message:
+          "Congratulations Afridi, your ride has been successfully registered!",
       isCelebration: true,
     );
   }

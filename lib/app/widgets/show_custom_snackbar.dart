@@ -22,7 +22,7 @@ showCustomSnackbar({
     //   )
     // ],
     snackPosition: SnackPosition.TOP,
-    backgroundColor: AppData.royalBlueColor,
+    backgroundColor: AppData.royalBlueColor.withOpacity(.8),
     margin: const EdgeInsets.all(10),
     duration: const Duration(seconds: 6),
     titleText: Text(
@@ -32,25 +32,23 @@ showCustomSnackbar({
         color: Colors.white,
       ),
     ),
-    icon: Padding(
-      padding: const EdgeInsets.only(left: 10.0, right: 5),
-      child: Icon(
-        isError
-            ? Icons.error
-            : isCelebration
-                ? Icons.celebration
-                : Icons.notifications,
-        color: isError
-            ? Colors.red
-            : isCelebration
-                ? Colors.green
-                : Colors.amber,
-      ),
+
+    isDismissible: true,
+    dismissDirection: DismissDirection.horizontal,
+    icon: Icon(
+      isError
+          ? Icons.error
+          : isCelebration
+              ? Icons.celebration
+              : Icons.notifications,
+      color: Colors.white,
+      size: 25,
     ),
     messageText: Text(
       message,
       style: AppData.regularTextStyle.copyWith(
-        color: Colors.white,
+        color: Colors.white.withOpacity(.7),
+        height: 1,
       ),
     ),
   );

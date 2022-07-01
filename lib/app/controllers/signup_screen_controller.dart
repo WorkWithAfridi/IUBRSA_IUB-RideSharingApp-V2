@@ -22,11 +22,20 @@ class SignupScreenController extends GetxController {
     await Future.delayed(AppData.waitTime);
     isRegisterButtonLoading.value = false;
 
-    Get.to(
-      () => const SignupOTPScreen(),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
-    );
+    if (signupProfileImage != null) {
+      Get.to(
+        () => const SignupOTPScreen(),
+        transition: Transition.leftToRight,
+        curve: Curves.easeInOut,
+      );
+    } else {
+      showCustomSnackbar(
+        title: "No profile picture detected!",
+        message:
+            "You need to add a profile picture for your friends to recognize you. :)",
+        isError: true,
+      );
+    }
   }
 
   onConfirmOTPCodeButtonClick() async {
@@ -36,7 +45,7 @@ class SignupScreenController extends GetxController {
     Get.offAllNamed(ROUTES.getHomeframeRoute);
     showCustomSnackbar(
       title: "Hi, Khondakar Afridi.",
-      message: "Welcome aboard on ${AppData.appName}.",
+      message: "Welcome aboard on ${AppData.appName}. \nRide safe. :)",
       isCelebration: true,
     );
   }
