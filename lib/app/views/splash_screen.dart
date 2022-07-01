@@ -36,50 +36,55 @@ class _SplashScreenState extends State<SplashScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const AppIcon(
-                  size: 40,
-                ),
-                const SizedBox(
-                  width: 8,
-                ),
-                Container(
-                  height: Get.width / 8 - 20,
-                  width: 0.5,
-                  color: AppData.customDarkGrey,
-                ),
-                const SizedBox(
-                  width: 8,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      AppData.appName,
-                      style: AppData.boldTextStyle.copyWith(fontSize: 18),
-                    ),
-                    Text(
-                      "Powered by",
-                      style: AppData.regularTextStyle.copyWith(
-                        fontSize: 10,
-                        height: 1,
-                        color: AppData.customLightGrey,
+            child: GestureDetector(
+              onTap: () {
+                controller.onSplashScreenRowButtonTap();
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const AppIcon(
+                    size: 40,
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Container(
+                    height: Get.width / 8 - 20,
+                    width: 0.5,
+                    color: AppData.customDarkGrey,
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        AppData.appName,
+                        style: AppData.boldTextStyle.copyWith(fontSize: 18),
                       ),
-                    ),
-                    Text(
-                      "Independent University\nBangladesh.",
-                      style: AppData.regularTextStyle.copyWith(
-                        fontSize: 10,
-                        height: .9,
+                      Text(
+                        "Powered by",
+                        style: AppData.regularTextStyle.copyWith(
+                          fontSize: 10,
+                          height: 1,
+                          color: AppData.customLightGrey,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      Text(
+                        "Independent University\nBangladesh.",
+                        style: AppData.regularTextStyle.copyWith(
+                          fontSize: 10,
+                          height: .9,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
           Container(

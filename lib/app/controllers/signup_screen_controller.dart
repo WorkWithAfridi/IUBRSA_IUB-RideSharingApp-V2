@@ -16,6 +16,11 @@ class SignupScreenController extends GetxController {
   Uint8List? signupProfileImage;
   var isRegisterButtonLoading = false.obs;
   var isConfirmOTPCodeButtonLoading = false.obs;
+  var usernameTextEditingController = TextEditingController().obs;
+  var emailTextEditingController = TextEditingController().obs;
+  var phoneTextEditingController = TextEditingController().obs;
+  var studentIdTextEditingController = TextEditingController().obs;
+  var passwordTextEditingController = TextEditingController().obs;
 
   onRegisterButtonClick() async {
     isRegisterButtonLoading.value = true;
@@ -25,8 +30,8 @@ class SignupScreenController extends GetxController {
     if (signupProfileImage != null) {
       Get.to(
         () => const SignupOTPScreen(),
-        transition: Transition.leftToRight,
-        curve: Curves.easeInOut,
+        transition: AppData.defaultTransition,
+        curve: AppData.defaultAnimationCurve,
       );
     } else {
       showCustomSnackbar(
@@ -176,10 +181,28 @@ class SignupScreenController extends GetxController {
   }
 
   onNextButtonClick() {
-    Get.to(
-      () => const SignupReviewScreen(),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
-    );
+    String username = usernameTextEditingController.value.text;
+    String email = emailTextEditingController.value.text;
+    String phone = phoneTextEditingController.value.text;
+    String studentId = studentIdTextEditingController.value.text;
+    String password = passwordTextEditingController.value.text;
+    if (username.isNotEmpty &&
+        email.isNotEmpty &&
+        phone.isNotEmpty &&
+        studentId.isNotEmpty &&
+        password.isNotEmpty) {
+      Get.to(
+        () => const SignupReviewScreen(),
+        transition: AppData.defaultTransition,
+        curve: AppData.defaultAnimationCurve,
+      );
+    } else {
+      showCustomSnackbar(
+        title: "Error!!",
+        message:
+            "You need to fill up the registration form entirely, in order to proceed to the next screen.",
+        isError: true,
+      );
+    }
   }
 }

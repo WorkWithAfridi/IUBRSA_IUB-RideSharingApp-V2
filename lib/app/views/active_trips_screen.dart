@@ -299,7 +299,10 @@ class ActiveTripsScreen extends StatelessWidget {
                       ),
                     );
                   },
-                )
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
               ],
             ),
           ),

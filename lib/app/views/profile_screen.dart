@@ -86,7 +86,7 @@ class ProfileScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   "Name",
-                                  style: AppData.regularTextStyle.copyWith(
+                                  style: AppData.lightTextStyle.copyWith(
                                     color: AppData.customLightGrey,
                                     fontSize: 13,
                                     height: 1,
@@ -114,7 +114,7 @@ class ProfileScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   "ID",
-                                  style: AppData.regularTextStyle.copyWith(
+                                  style: AppData.lightTextStyle.copyWith(
                                     color: AppData.customLightGrey,
                                     fontSize: 13,
                                     height: 1,

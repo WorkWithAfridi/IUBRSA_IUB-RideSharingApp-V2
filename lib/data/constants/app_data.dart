@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
 class AppData {
   static String appName = "IUBRSA";
@@ -36,4 +37,6 @@ class AppData {
   static const defaultPadding = EdgeInsets.symmetric(horizontal: 20);
   static const defaultBorderRadius = 10.00;
   static const defaultButtonHeight = 55.00;
+  static const defaultTransition = Transition.fadeIn;
+  static const defaultAnimationCurve = Curves.easeInOut;
 }

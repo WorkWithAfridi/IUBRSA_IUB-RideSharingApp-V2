@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/controllers/signup_screen_controller.dart';
 import 'package:iubrsa/app/widgets/custom_back_button.dart';
+import 'package:iubrsa/app/widgets/custom_button.dart';
 import 'package:iubrsa/app/widgets/custom_text_field.dart';
 
 import '../../data/constants/app_data.dart';
@@ -82,7 +83,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             height: 30,
                           ),
                           CustomTextField(
-                            TEC: TextEditingController(),
+                            TEC: controller.usernameTextEditingController.value,
                             hint: "Enter username...",
                             textInputType: TextInputType.emailAddress,
                             maxLines: 1,
@@ -91,7 +92,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             height: 10,
                           ),
                           CustomTextField(
-                            TEC: TextEditingController(),
+                            TEC: controller.emailTextEditingController.value,
                             hint: "Enter email address...",
                             textInputType: TextInputType.emailAddress,
                             maxLines: 1,
@@ -100,7 +101,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             height: 10,
                           ),
                           CustomTextField(
-                            TEC: TextEditingController(),
+                            TEC: controller.phoneTextEditingController.value,
                             hint: "Enter phone number...",
                             textInputType: TextInputType.emailAddress,
                             maxLines: 1,
@@ -109,7 +110,8 @@ class _SignupScreenState extends State<SignupScreen> {
                             height: 10,
                           ),
                           CustomTextField(
-                            TEC: TextEditingController(),
+                            TEC:
+                                controller.studentIdTextEditingController.value,
                             hint: "Enter student id...",
                             textInputType: TextInputType.emailAddress,
                             maxLines: 1,
@@ -118,7 +120,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             height: 10,
                           ),
                           CustomTextField(
-                            TEC: TextEditingController(),
+                            TEC: controller.passwordTextEditingController.value,
                             hint: "Password...",
                             textInputType: TextInputType.emailAddress,
                             maxLines: 1,
@@ -127,34 +129,12 @@ class _SignupScreenState extends State<SignupScreen> {
                           const SizedBox(
                             height: 15,
                           ),
-                          Material(
-                            elevation: 15.0,
-                            shadowColor: AppData.babyBlueColor,
-                            borderRadius: BorderRadius.circular(
-                                AppData.defaultBorderRadius),
-                            child: GestureDetector(
-                              onTap: () {
-                                controller.onNextButtonClick();
-                              },
-                              child: Container(
-                                height: AppData.defaultButtonHeight,
-                                width: Get.width,
-                                decoration: BoxDecoration(
-                                  color: AppData.royalBlueColor,
-                                  borderRadius: BorderRadius.circular(
-                                    AppData.defaultBorderRadius,
-                                  ),
-                                ),
-                                alignment: Alignment.center,
-                                child: Text(
-                                  'Next',
-                                  style: AppData.boldTextStyle.copyWith(
-                                    color: AppData.customWhite,
-                                    fontSize: 13,
-                                  ),
-                                ),
-                              ),
-                            ),
+                          CustomButton(
+                            title: "Next",
+                            callBackFunction: () {
+                              controller.onNextButtonClick();
+                            },
+                            isLoading: false,
                           ),
                           const SizedBox(
                             height: 25,
@@ -277,9 +257,9 @@ class _SignupScreenState extends State<SignupScreen> {
                   children: [
                     Text(
                       "Already have an account? ",
-                      style: AppData.regularTextStyle.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: AppData.darkBlueColor.withOpacity(.8)),
+                      style: AppData.lightTextStyle.copyWith(
+                        color: AppData.darkBlueColor.withOpacity(.8),
+                      ),
                     ),
                     Text(
                       "Signin!",

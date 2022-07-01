@@ -19,17 +19,21 @@ class HomeframController extends GetxController {
   showActiveTrips(String mode) {
     Get.to(
       () => ActiveTripsScreen(mode: mode),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
+      transition: AppData.defaultTransition,
+      curve: AppData.defaultAnimationCurve,
     );
   }
 
   openGoogleMapsScreen() {
     Get.to(
       () => MapScreen(),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
+      transition: AppData.defaultTransition,
+      curve: AppData.defaultAnimationCurve,
     );
+  }
+
+  onNotificationBellbuttonClick() {
+    Get.toNamed(ROUTES.getNotificationScreenScreenRoute);
   }
 
   Future<void> onSoSButtonClick() {

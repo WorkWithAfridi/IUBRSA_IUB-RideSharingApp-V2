@@ -641,11 +641,13 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
                     ),
                     Text(
                       "*Please be advised that your trip will automatically be dactivated after 2 hours!",
-                      style: AppData.regularTextStyle.copyWith(
-                          color: AppData.customLightGrey, height: .95),
+                      style: AppData.lightTextStyle.copyWith(
+                        color: AppData.customLightGrey,
+                        height: .95,
+                      ),
                     ),
                     const SizedBox(
-                      height: 8,
+                      height: 4,
                     ),
                     Obx(
                       () => CustomButton(
@@ -657,7 +659,7 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
                       ),
                     ),
                     const SizedBox(
-                      height: 25,
+                      height: 15,
                     ),
                   ],
                 ),

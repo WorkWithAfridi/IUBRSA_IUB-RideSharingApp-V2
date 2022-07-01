@@ -80,7 +80,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             height: 30,
                           ),
                           CustomTextField(
-                            TEC: TextEditingController(),
+                            TEC: controller.emailTextEditingController.value,
                             hint: "Enter email address...",
                             textInputType: TextInputType.emailAddress,
                             maxLines: 1,
@@ -89,7 +89,7 @@ class _SigninScreenState extends State<SigninScreen> {
                             height: 10,
                           ),
                           CustomTextField(
-                            TEC: TextEditingController(),
+                            TEC: controller.passwordTextEditingController.value,
                             hint: "Password...",
                             textInputType: TextInputType.emailAddress,
                             maxLines: 1,
@@ -101,11 +101,16 @@ class _SigninScreenState extends State<SigninScreen> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              Text(
-                                'Recovery Password',
-                                style: AppData.regularTextStyle.copyWith(
-                                  color: AppData.customDarkGrey,
-                                  fontWeight: FontWeight.w800,
+                              GestureDetector(
+                                onTap: () {
+                                  controller.onRecoveryPasswordButtonClick();
+                                },
+                                child: Text(
+                                  'Recovery Password',
+                                  style: AppData.regularTextStyle.copyWith(
+                                    color: AppData.customDarkGrey,
+                                    fontWeight: FontWeight.w800,
+                                  ),
                                 ),
                               ),
                               const SizedBox(
@@ -249,9 +254,9 @@ class _SigninScreenState extends State<SigninScreen> {
                   children: [
                     Text(
                       "Not a member? ",
-                      style: AppData.regularTextStyle.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: AppData.darkBlueColor.withOpacity(.8)),
+                      style: AppData.lightTextStyle.copyWith(
+                        color: AppData.darkBlueColor.withOpacity(.8),
+                      ),
                     ),
                     Text(
                       "Register now!",

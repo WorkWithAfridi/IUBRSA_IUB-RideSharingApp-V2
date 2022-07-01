@@ -18,6 +18,13 @@ class TripDetailsScreen extends StatefulWidget {
 
 class _TripDetailsScreenState extends State<TripDetailsScreen> {
   final TripDetailsScreenController controller = Get.find();
+
+  @override
+  void dispose() {
+    Get.delete<TripDetailsScreenController>();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -246,6 +253,22 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
+                      'Transport Vehicle Type',
+                      style: AppData.boldTextStyle,
+                    ),
+                    Text(
+                      "Car",
+                      style: AppData.boldTextStyle,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
                       'Vehicle Registration Id',
                       style: AppData.boldTextStyle,
                     ),
@@ -326,7 +349,7 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                         ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
               ],
             ),
