@@ -11,7 +11,7 @@ A full-stack closed-system cross platform ride sharing application targeted for 
 
 ## Demo video and in-app screenshots
 
-* [IUBRSA Demo Video](ToBeUpdated)
+* [IUBRSA Demo Video](https://sites.google.com/view/workwithafridi)
 
 ![Demo Image](ToBeUpdated?raw=true)
 
