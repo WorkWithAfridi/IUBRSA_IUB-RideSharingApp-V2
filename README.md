@@ -1,16 +1,24 @@
-# iubrsa
+# IUBRSA
 
-A new Flutter project.
+## A full-stack Ride Sharing App using Flutter, Firebase & GetX.
 
-## Getting Started
+A full-stack closed-system cross platform ride sharing application targeted for mobile ( Android and IOS ) with live location tracking, google maps, VOIP calling, messaging facilities and a real time database system, where students may share rides and travel to their destination ( to and from IUB ) more affordably and safely. The App features security protocols like SOS through which students can send out distress calls to their surrounding student comity or directy send their geo-coordinates to their emergency contacts, etc.
 
-This project is a starting point for a Flutter application.
+* User Authentication using Firebase Authentication
+* Backend using Firebase Cloud Firestore
+* State management using GetX
+* Image compressor, Image cropping and other packages/ plugins from pub.dev
 
-A few resources to get you started if this is your first Flutter project:
+## Demo video and in-app screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+* [IUBRSA Demo Video](ToBeUpdated)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Demo Image](ToBeUpdated?raw=true)
+
+## How to install the app on your physical device
+
+Download the source code and compile the apk using Flutter CLI or Android Studio
+
+## Want to contribute to the project? 
+
+Just send in your pull req. I'll for sure have a look into it. :)
