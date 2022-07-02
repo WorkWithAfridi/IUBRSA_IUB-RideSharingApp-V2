@@ -17,7 +17,9 @@ class SigninScreenController extends GetxController {
   onSignInButtonClick() async {
     String email = emailTextEditingController.value.text;
     String password = passwordTextEditingController.value.text;
-    if (email.isNotEmpty && password.isNotEmpty) {
+    if (true
+        // email.isNotEmpty && password.isNotEmpty
+        ) {
       isSignInButtonLoading.value = true;
       await Future.delayed(AppData.waitTime);
       isSignInButtonLoading.value = false;

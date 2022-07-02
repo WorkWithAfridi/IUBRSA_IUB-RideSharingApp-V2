@@ -23,7 +23,7 @@ class GetGoogleMaps extends StatefulWidget {
 class _GetGoogleMapsState extends State<GetGoogleMaps> {
   final CameraPosition myLocation = CameraPosition(
     target: LatLng(23.744346, 90.417266),
-    zoom: 16,
+    zoom: 14,
   );
 
   Iterable markers = [

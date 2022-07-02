@@ -36,6 +36,18 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
           ),
         ),
         leading: GetBackButton(),
+        actions: [
+          IconButton(
+            onPressed: () {
+              controller.onOptionButtonClick();
+            },
+            icon: const Icon(
+              Icons.more_vert,
+              color: AppData.darkBlueColor,
+              size: 18,
+            ),
+          )
+        ],
       ),
       body: Container(
         height: Get.height,
@@ -73,7 +85,7 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                                 BorderRadius.circular((Get.width / 4) - 5),
                           ),
                           child: Hero(
-                            tag: "profile_image",
+                            tag: 1,
                             child: ClipRRect(
                               borderRadius:
                                   BorderRadius.circular((Get.width / 4) - 5),
