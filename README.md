@@ -13,7 +13,7 @@ A full-stack closed-system cross platform ride sharing application targeted for 
 
 * [IUBRSA Demo Video](https://sites.google.com/view/workwithafridi)
 
-![Demo Image](ToBeUpdated?raw=true)
+![Demo Image](https://github.com/llKYOTOll/IUBRSA_IUB-RideSharingApp-V2/blob/master/assets/promotional_images/Screenshot%202022-07-02%20200500.png?raw=true)
 
 ## How to install the app on your physical device
 
