@@ -1,13 +1,18 @@
 import 'package:get/get.dart';
+import 'package:iubrsa/app/controllers/network_controller.dart';
 import 'package:iubrsa/app/routes/app_routes.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 import 'package:iubrsa/data/services/url_launcher_services.dart';
 
 class SplashScreenController extends GetxController {
   var count = 0.obs;
+  final NetworkController networkController = Get.find();
   triggerSplashScreen() async {
     await Future.delayed(AppData.waitTime);
-    Get.offNamed(ROUTES.getOnboardingScreenRoute);
+    networkController.checkConnectivity();
+    if (networkController.connectionStatus != "NoConnection") {
+      Get.offNamed(ROUTES.getOnboardingScreenRoute);
+    }
   }
 
   onSplashScreenRowButtonTap() {
