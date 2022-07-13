@@ -6,6 +6,7 @@ import 'package:iubrsa/app/views/map_screen.dart';
 import 'package:iubrsa/data/services/url_launcher_services.dart';
 
 import '../../data/constants/app_data.dart';
+import '../widgets/custom_snackbar.dart';
 
 class HomeframController extends GetxController {
   var pageIndex = 0.obs;
@@ -163,6 +164,11 @@ class HomeframController extends GetxController {
 
   onHomeframeFloatingActionButtonClick() {
     Get.toNamed(ROUTES.getRegisterATripScreenRoute);
+    // showCustomSnackbar(
+    //   title: "Hi, Khondakar Afridi.",
+    //   message: "Welcome aboard on ${AppData.appName}. \nRide safe. :)",
+    //   isSuccess: true,
+    // );
   }
 
   onSosCall999ButtonClick() {

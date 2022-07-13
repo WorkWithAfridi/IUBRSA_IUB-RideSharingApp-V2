@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iubrsa/app/widgets/show_custom_snackbar.dart';
+import 'package:iubrsa/app/widgets/custom_snackbar.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 import 'package:iubrsa/data/services/url_launcher_services.dart';
 

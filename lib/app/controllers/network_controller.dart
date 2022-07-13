@@ -4,11 +4,11 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/views/warning_screen.dart';
-import 'package:iubrsa/app/widgets/show_custom_snackbar.dart';
+import 'package:iubrsa/app/widgets/custom_snackbar.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 
 class NetworkController extends GetxController {
-  var connectionStatus = "NoConnection".obs;
+  var connectionStatus = "".obs;
   final Connectivity _connectivity = Connectivity();
   late StreamSubscription<ConnectivityResult> _connectivitySubscription;
 

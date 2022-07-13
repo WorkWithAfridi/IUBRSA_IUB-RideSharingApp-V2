@@ -9,7 +9,7 @@ class SplashScreenController extends GetxController {
   final NetworkController networkController = Get.find();
   triggerSplashScreen() async {
     await Future.delayed(AppData.waitTime);
-    networkController.checkConnectivity();
+    await networkController.checkConnectivity();
     if (networkController.connectionStatus != "NoConnection") {
       Get.offNamed(ROUTES.getOnboardingScreenRoute);
     }

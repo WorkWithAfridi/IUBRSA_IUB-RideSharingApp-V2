@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/routes/app_routes.dart';
 import 'package:iubrsa/app/views/recover_password.dart';
-import 'package:iubrsa/app/widgets/show_custom_snackbar.dart';
+import 'package:iubrsa/app/widgets/custom_snackbar.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 
 class SigninScreenController extends GetxController {

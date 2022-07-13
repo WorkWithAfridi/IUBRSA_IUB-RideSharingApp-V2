@@ -36,7 +36,7 @@ class AppData {
   static const defaultElevation = 2;
   static const defaultPadding = EdgeInsets.symmetric(horizontal: 20);
   static const defaultBorderRadius = 10.00;
-  static const defaultButtonHeight = 55.00;
+  static const defaultButtonHeight = 50.00;
   static const defaultTransition = Transition.fadeIn;
   static const defaultAnimationCurve = Curves.easeInOut;
 }

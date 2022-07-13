@@ -31,7 +31,7 @@ class NetworkWarningScreen extends StatelessWidget {
                 'assets/lottie_animations/404.json',
               ),
               Text(
-                "Oops...",
+                "Oh snap...",
                 style: AppData.boldTextStyle.copyWith(
                   fontSize: 20,
                 ),

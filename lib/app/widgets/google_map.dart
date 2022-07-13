@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:iubrsa/app/widgets/show_custom_snackbar.dart';
+import 'package:iubrsa/app/widgets/custom_snackbar.dart';
 
 import '../../data/constants/app_data.dart';
 

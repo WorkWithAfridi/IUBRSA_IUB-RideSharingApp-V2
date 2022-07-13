@@ -11,10 +11,21 @@ import 'package:iubrsa/data/constants/app_data.dart';
 
 import '../widgets/custom_divider.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key? key}) : super(key: key);
 
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
   ProfileScreenController controller = Get.find();
+
+  @override
+  void dispose() {
+    Get.delete<ProfileScreenController>();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

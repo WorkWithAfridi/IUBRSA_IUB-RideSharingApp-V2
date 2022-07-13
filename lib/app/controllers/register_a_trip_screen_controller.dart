@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:iubrsa/app/widgets/show_custom_snackbar.dart';
+import 'package:iubrsa/app/widgets/custom_snackbar.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 
 class RegisterATripScreenController extends GetxController {
@@ -13,10 +13,10 @@ class RegisterATripScreenController extends GetxController {
     isRegisterButtonLoading.value = false;
     Get.back();
     showCustomSnackbar(
-      title: "Registration successful!!",
+      title: "Done deal!",
       message:
           "Congratulations Afridi, your ride has been successfully registered!",
-      isCelebration: true,
+      // isSuccess: true,
     );
   }
 }
