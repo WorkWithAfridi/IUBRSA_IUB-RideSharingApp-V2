@@ -1,25 +1,25 @@
 import 'package:flutter/animation.dart';
 import 'package:get/get.dart';
-import 'package:iubrsa/app/controllers/bindings/homeframe_bindings.dart';
-import 'package:iubrsa/app/controllers/bindings/notification_screen_binding.dart';
-import 'package:iubrsa/app/controllers/bindings/onboarding_screen_binding.dart';
-import 'package:iubrsa/app/controllers/bindings/profile_screen_binding.dart';
-import 'package:iubrsa/app/controllers/bindings/register_a_trip_screen_binding.dart';
-import 'package:iubrsa/app/controllers/bindings/signin_screen_binding.dart';
-import 'package:iubrsa/app/controllers/bindings/splash_screen_binding.dart';
-import 'package:iubrsa/app/controllers/bindings/trip_details_screen_bindings.dart';
-import 'package:iubrsa/app/views/homefram.dart';
-import 'package:iubrsa/app/views/notification_screen.dart';
-import 'package:iubrsa/app/views/onboarding_screen.dart';
-import 'package:iubrsa/app/views/profile_screen.dart';
-import 'package:iubrsa/app/views/register_a_trip_screen.dart';
-import 'package:iubrsa/app/views/signin_screen.dart';
-import 'package:iubrsa/app/views/trip_details_screen.dart';
+import 'package:iubrsa/app/views/home/binding/homeframe_bindings.dart';
+import 'package:iubrsa/app/views/notification/binding/notification_screen_binding.dart';
+import 'package:iubrsa/app/views/onboarding/binding/onboarding_screen_binding.dart';
+import 'package:iubrsa/app/views/profile/binding/profile_screen_binding.dart';
+import 'package:iubrsa/app/views/register_a_trip/binding/register_a_trip_screen_binding.dart';
+import 'package:iubrsa/app/views/signin/binding/signin_screen_binding.dart';
+import 'package:iubrsa/app/views/trip_details/binding/trip_details_screen_bindings.dart';
+import 'package:iubrsa/app/views/home/views/homefram.dart';
+import 'package:iubrsa/app/views/notification/views/notification_screen.dart';
+import 'package:iubrsa/app/views/onboarding/views/onboarding_screen.dart';
+import 'package:iubrsa/app/views/profile/views/profile_screen.dart';
+import 'package:iubrsa/app/views/register_a_trip/views/register_a_trip_screen.dart';
+import 'package:iubrsa/app/views/signin/views/signin_screen.dart';
+import 'package:iubrsa/app/views/trip_details/views/trip_details_screen.dart';
 
 import '../../data/constants/app_data.dart';
-import '../controllers/bindings/signup_screen_binding.dart';
-import '../views/signup_screen.dart';
-import '../views/splash_screen.dart';
+import '../views/signup/binding/signup_screen_binding.dart';
+import '../views/splashscreen/binding/splash_screen_binding.dart';
+import '../views/signup/views/signup_screen.dart';
+import '../views/splashscreen/views/splash_screen.dart';
 
 class ROUTES {
   static get getSplashScreenRoute => "/splash_screen";
