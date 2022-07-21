@@ -56,11 +56,14 @@ class _SignupOTPScreenState extends State<SignupOTPScreen> {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(
-                height: 3,
+                height: 10,
               ),
-              const Text(
+              Text(
                 "Please check your SMS messages.\nWe've sent you a SMS with a verification CODE on it, to verify your account. :)",
-                style: AppData.regularTextStyle,
+                style: AppData.lightTextStyle.copyWith(
+                  color: AppData.customDarkGrey,
+                  height: 1.1,
+                ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(

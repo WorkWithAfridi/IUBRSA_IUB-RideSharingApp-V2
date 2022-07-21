@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:iubrsa/app/views/trip_details/controller/trip_details_screen_controller.dart';
 import 'package:iubrsa/app/shared/widgets/custom_button.dart';
 
@@ -18,6 +19,14 @@ class TripDetailsScreen extends StatefulWidget {
 
 class _TripDetailsScreenState extends State<TripDetailsScreen> {
   final TripDetailsScreenController controller = Get.find();
+
+  @override
+  void initState() {
+    controller.getCurrentLocation();
+    controller.setCustomMarkerIcon();
+    controller.getPolyPointsForMapPath();
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -139,16 +148,85 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: Get.height / 3,
-                  width: Get.width,
-                  decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.circular(AppData.defaultBorderRadius),
-                  ),
-                  child: GetGoogleMaps(
-                    showAnimationAndBounceBetweenTwoPoints: true,
-                  ),
+                GetBuilder<TripDetailsScreenController>(
+                  init: controller,
+                  initState: (_) {},
+                  builder: (_) {
+                    return Container(
+                      height: Get.height / 3,
+                      width: Get.width,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(AppData.defaultBorderRadius),
+                      ),
+                      child: controller.userLocation == null
+                          ? const Center(
+                              child: Text(
+                                "Loading...",
+                                style: AppData.lightTextStyle,
+                              ),
+                            )
+                          : ClipRRect(
+                              borderRadius: BorderRadius.circular(
+                                  AppData.defaultBorderRadius),
+                              child: GoogleMap(
+                                initialCameraPosition: CameraPosition(
+                                  target: LatLng(
+                                    controller.userLocation!.latitude!,
+                                    controller.userLocation!.longitude!,
+                                  ),
+                                  zoom: 13.5,
+                                ),
+                                polylines: {
+                                  Polyline(
+                                    polylineId: const PolylineId("route"),
+                                    points: controller.polylineCoordinates,
+                                    color: AppData.darkBlueColor,
+                                    width: 6,
+                                  )
+                                },
+                                onMapCreated: (mapController) {
+                                  controller.mapController
+                                      .complete(mapController);
+                                },
+                                markers: {
+                                  Marker(
+                                    markerId: MarkerId("source"),
+                                    icon: BitmapDescriptor.defaultMarker,
+                                    position: LatLng(
+                                      controller.sourceLocation.latitude,
+                                      controller.sourceLocation.longitude,
+                                    ),
+                                  ),
+                                  Marker(
+                                    markerId: MarkerId("destination"),
+                                    icon: BitmapDescriptor.defaultMarker,
+                                    position: LatLng(
+                                      controller.destinationLocation.latitude,
+                                      controller.destinationLocation.longitude,
+                                    ),
+                                  ),
+                                  Marker(
+                                    markerId: MarkerId("UserLocation"),
+                                    icon: controller.userIcon.value,
+                                    position: LatLng(
+                                      controller.userLocation!.latitude!,
+                                      controller.userLocation!.longitude!,
+                                    ),
+                                  ),
+                                  Marker(
+                                    markerId: MarkerId("RiderLocation"),
+                                    icon: controller.riderIcon.value,
+                                    position: LatLng(
+                                      controller.riderLocation.latitude,
+                                      controller.riderLocation.longitude,
+                                    ),
+                                  ),
+                                },
+                              ),
+                            ),
+                    );
+                  },
                 ),
                 const SizedBox(
                   height: 10,

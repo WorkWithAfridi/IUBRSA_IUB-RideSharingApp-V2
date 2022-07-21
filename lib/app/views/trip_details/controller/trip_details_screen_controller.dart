@@ -1,13 +1,95 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:iubrsa/app/shared/widgets/custom_snackbar.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 import 'package:iubrsa/data/services/url_launcher_services.dart';
+import 'package:location/location.dart';
 
 class TripDetailsScreenController extends GetxController {
   var isbookASeatButtonLoading = false.obs;
   var isCancelSeatButtonLoading = false.obs;
   var rideBooked = false.obs;
+  var riderLocation = LatLng(23.742153, 90.416721);
+  var sourceLocation = LatLng(23.740899, 90.420447);
+  var destinationLocation = LatLng(23.815554, 90.427955);
+  LocationData? userLocation;
+  Completer<GoogleMapController> mapController = Completer();
+
+  List<LatLng> polylineCoordinates = [];
+
+  var riderIcon = BitmapDescriptor.defaultMarker.obs;
+  var userIcon = BitmapDescriptor.defaultMarker.obs;
+
+  void setCustomMarkerIcon() {
+    BitmapDescriptor.fromAssetImage(
+            ImageConfiguration.empty, "assets/images/locationMarkerCar.png")
+        .then((icon) {
+      riderIcon.value = icon;
+    });
+    BitmapDescriptor.fromAssetImage(
+            ImageConfiguration.empty, "assets/images/person.png")
+        .then((icon) {
+      userIcon.value = icon;
+    });
+  }
+
+  void getPolyPointsForMapPath() async {
+    PolylinePoints polylinePoints = PolylinePoints();
+    PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
+      "AIzaSyAiWFnopqXMgRDf_K-aZLLEA5_LUprnUjY",
+      PointLatLng(
+        sourceLocation.latitude,
+        sourceLocation.longitude,
+      ),
+      PointLatLng(
+        destinationLocation.latitude,
+        destinationLocation.longitude,
+      ),
+    );
+    if (result.points.isNotEmpty) {
+      result.points.forEach(
+        (PointLatLng point) => polylineCoordinates.add(
+          LatLng(
+            point.latitude,
+            point.longitude,
+          ),
+        ),
+      );
+      //Notify screen
+    }
+  }
+
+  void getCurrentLocation() async {
+    Location location = Location();
+    location.getLocation().then(
+      (location) {
+        userLocation = location;
+        update();
+      },
+    );
+    GoogleMapController googleMapController = await mapController.future;
+
+    location.onLocationChanged.listen((newLocation) {
+      googleMapController.animateCamera(
+        CameraUpdate.newCameraPosition(
+          CameraPosition(
+            zoom: 16,
+            target: LatLng(
+              newLocation.latitude!,
+              newLocation.longitude!,
+            ),
+          ),
+        ),
+      );
+      userLocation = newLocation;
+      update();
+    });
+  }
+
   onBookASeatButtonClick() async {
     isbookASeatButtonLoading.value = true;
     await Future.delayed(AppData.waitTime);
