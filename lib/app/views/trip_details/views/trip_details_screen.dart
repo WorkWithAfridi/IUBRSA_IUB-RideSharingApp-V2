@@ -9,6 +9,7 @@ import 'package:iubrsa/app/shared/widgets/custom_button.dart';
 import '../../../../data/constants/app_data.dart';
 import '../../../shared/widgets/custom_back_button.dart';
 import '../../../shared/widgets/google_map.dart';
+import '../widgets/google_maps.dart';
 
 class TripDetailsScreen extends StatefulWidget {
   const TripDetailsScreen({Key? key}) : super(key: key);
@@ -166,65 +167,8 @@ class _TripDetailsScreenState extends State<TripDetailsScreen> {
                                 style: AppData.lightTextStyle,
                               ),
                             )
-                          : ClipRRect(
-                              borderRadius: BorderRadius.circular(
-                                  AppData.defaultBorderRadius),
-                              child: GoogleMap(
-                                initialCameraPosition: CameraPosition(
-                                  target: LatLng(
-                                    controller.userLocation!.latitude!,
-                                    controller.userLocation!.longitude!,
-                                  ),
-                                  zoom: 13.5,
-                                ),
-                                polylines: {
-                                  Polyline(
-                                    polylineId: const PolylineId("route"),
-                                    points: controller.polylineCoordinates,
-                                    color: AppData.darkBlueColor,
-                                    width: 6,
-                                  )
-                                },
-                                onMapCreated: (mapController) {
-                                  controller.mapController
-                                      .complete(mapController);
-                                },
-                                markers: {
-                                  Marker(
-                                    markerId: MarkerId("source"),
-                                    icon: BitmapDescriptor.defaultMarker,
-                                    position: LatLng(
-                                      controller.sourceLocation.latitude,
-                                      controller.sourceLocation.longitude,
-                                    ),
-                                  ),
-                                  Marker(
-                                    markerId: MarkerId("destination"),
-                                    icon: BitmapDescriptor.defaultMarker,
-                                    position: LatLng(
-                                      controller.destinationLocation.latitude,
-                                      controller.destinationLocation.longitude,
-                                    ),
-                                  ),
-                                  Marker(
-                                    markerId: MarkerId("UserLocation"),
-                                    icon: controller.userIcon.value,
-                                    position: LatLng(
-                                      controller.userLocation!.latitude!,
-                                      controller.userLocation!.longitude!,
-                                    ),
-                                  ),
-                                  Marker(
-                                    markerId: MarkerId("RiderLocation"),
-                                    icon: controller.riderIcon.value,
-                                    position: LatLng(
-                                      controller.riderLocation.latitude,
-                                      controller.riderLocation.longitude,
-                                    ),
-                                  ),
-                                },
-                              ),
-                            ),
+                          : GetGoogleMapsForTripDetailsScreen(
+                              controller: controller),
                     );
                   },
                 ),

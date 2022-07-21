@@ -73,21 +73,21 @@ class TripDetailsScreenController extends GetxController {
     );
     GoogleMapController googleMapController = await mapController.future;
 
-    location.onLocationChanged.listen((newLocation) {
-      googleMapController.animateCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(
-            zoom: 16,
-            target: LatLng(
-              newLocation.latitude!,
-              newLocation.longitude!,
-            ),
-          ),
-        ),
-      );
-      userLocation = newLocation;
-      update();
-    });
+    // location.onLocationChanged.listen((newLocation) {
+    //   googleMapController.animateCamera(
+    //     CameraUpdate.newCameraPosition(
+    //       CameraPosition(
+    //         zoom: 16,
+    //         target: LatLng(
+    //           newLocation.latitude!,
+    //           newLocation.longitude!,
+    //         ),
+    //       ),
+    //     ),
+    //   );
+    //   userLocation = newLocation;
+    //   update();
+    // });
   }
 
   onBookASeatButtonClick() async {
