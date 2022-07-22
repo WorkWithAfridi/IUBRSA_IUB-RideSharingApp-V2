@@ -37,7 +37,7 @@ class SignupScreenController extends GetxController {
       showCustomSnackbar(
         title: "No DP detected!",
         message:
-            "You need to add a profile picture, in order for your friends to recognize you. :)",
+            "You need to add a profile picture, for others to recognize you. :)",
         isWarning: true,
       );
     }
