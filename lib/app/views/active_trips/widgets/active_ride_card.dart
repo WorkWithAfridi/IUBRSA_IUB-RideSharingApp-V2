@@ -24,9 +24,8 @@ class ActiveRideCard extends StatelessWidget {
         child: Container(
           height: 150,
           width: double.maxFinite,
-          padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: AppData.customWhite,
+            color: AppData.royalBlueColor,
             borderRadius: BorderRadius.circular(
               AppData.defaultBorderRadius,
             ),
@@ -35,7 +34,12 @@ class ActiveRideCard extends StatelessWidget {
             children: [
               Flexible(
                 flex: 1,
-                child: SizedBox(
+                child: Container(
+                  padding: const EdgeInsets.only(
+                    top: 15,
+                    left: 15,
+                    bottom: 15,
+                  ),
                   height: double.maxFinite,
                   width: double.maxFinite,
                   // color: Colors.red,
@@ -54,7 +58,7 @@ class ActiveRideCard extends StatelessWidget {
                                 height: 40,
                                 width: 40,
                                 decoration: BoxDecoration(
-                                  color: AppData.royalBlueColor,
+                                  color: AppData.customWhite,
                                   borderRadius: BorderRadius.circular(
                                     40,
                                   ),
@@ -92,14 +96,18 @@ class ActiveRideCard extends StatelessWidget {
                               children: [
                                 Text(
                                   "Khondakar Morshed Afridi",
-                                  style: AppData.boldTextStyle
-                                      .copyWith(height: .95),
+                                  style: AppData.boldTextStyle.copyWith(
+                                    height: .95,
+                                    color: AppData.customWhite,
+                                  ),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
                                 ),
                                 Text(
                                   "1820461",
-                                  style: AppData.lightTextStyle,
+                                  style: AppData.lightTextStyle.copyWith(
+                                    color: AppData.customWhite,
+                                  ),
                                 ),
                               ],
                             ),
@@ -114,13 +122,14 @@ class ActiveRideCard extends StatelessWidget {
                             "120 Tk",
                             style: AppData.boldTextStyle.copyWith(
                               fontSize: 15,
-                              color: AppData.royalBlueColor,
+                              color: AppData.customWhite,
                             ),
                           ),
                           Text(
                             " /seat",
                             style: AppData.lightTextStyle.copyWith(
                               fontSize: 12,
+                              color: AppData.babyBlueColor,
                             ),
                           ),
                         ],
@@ -137,6 +146,7 @@ class ActiveRideCard extends StatelessWidget {
                             style: AppData.boldTextStyle.copyWith(
                               fontSize: 14,
                               height: .95,
+                              color: AppData.customWhite,
                             ),
                           ),
                           const SizedBox(
@@ -146,6 +156,8 @@ class ActiveRideCard extends StatelessWidget {
                             "4",
                             style: AppData.lightTextStyle.copyWith(
                               fontSize: 20,
+                              color: AppData.customWhite,
+                              fontWeight: FontWeight.w800,
                             ),
                           ),
                         ],
@@ -154,12 +166,90 @@ class ActiveRideCard extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                width: 40,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 10,
+                      width: 20,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10),
+                        ),
+                        color: AppData.scaffoldBackgroundColor,
+                      ),
+                    ),
+                    Expanded(
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          LayoutBuilder(
+                            builder: ((context, constraints) {
+                              return Flex(
+                                direction: Axis.vertical,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                mainAxisSize: MainAxisSize.max,
+                                children: List.generate(
+                                  (constraints.constrainWidth() / 3).floor(),
+                                  (index) => const SizedBox(
+                                    width: 1,
+                                    height: 3,
+                                    child: DecoratedBox(
+                                      decoration: BoxDecoration(
+                                        color: AppData.scaffoldBackgroundColor,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }),
+                          ),
+                          const RotatedBox(
+                            quarterTurns: 3,
+                            child: Icon(
+                              Icons.cut,
+                              color: AppData.customWhite,
+                              size: 16,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 10,
+                      width: 20,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                        ),
+                        color: AppData.scaffoldBackgroundColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Flexible(
                 flex: 1,
                 child: Container(
+                  decoration: BoxDecoration(
+                    color: AppData.customWhite,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(AppData.defaultBorderRadius),
+                      bottomRight: Radius.circular(AppData.defaultBorderRadius),
+                    ),
+                  ),
+                  padding: const EdgeInsets.only(
+                    top: 15,
+                    right: 15,
+                    bottom: 15,
+                  ),
                   height: double.maxFinite,
                   width: double.maxFinite,
-                  padding: const EdgeInsets.all(10),
                   child: Column(
                     children: [
                       Flexible(
