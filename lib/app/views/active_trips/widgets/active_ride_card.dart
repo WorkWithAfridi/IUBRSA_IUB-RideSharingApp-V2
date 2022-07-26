@@ -245,7 +245,7 @@ class ActiveRideCard extends StatelessWidget {
                   ),
                   padding: const EdgeInsets.only(
                     top: 15,
-                    right: 15,
+                    // right: 15,
                     bottom: 15,
                   ),
                   height: double.maxFinite,
