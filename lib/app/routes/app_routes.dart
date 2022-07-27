@@ -3,14 +3,13 @@ import 'package:get/get.dart';
 import 'package:iubrsa/app/views/home/binding/homeframe_bindings.dart';
 import 'package:iubrsa/app/views/notification/binding/notification_screen_binding.dart';
 import 'package:iubrsa/app/views/onboarding/binding/onboarding_screen_binding.dart';
-import 'package:iubrsa/app/views/profile/binding/profile_screen_binding.dart';
 import 'package:iubrsa/app/views/register_a_trip/binding/register_a_trip_screen_binding.dart';
 import 'package:iubrsa/app/views/signin/binding/signin_screen_binding.dart';
 import 'package:iubrsa/app/views/trip_details/binding/trip_details_screen_bindings.dart';
 import 'package:iubrsa/app/views/home/views/homefram.dart';
 import 'package:iubrsa/app/views/notification/views/notification_screen.dart';
 import 'package:iubrsa/app/views/onboarding/views/onboarding_screen.dart';
-import 'package:iubrsa/app/views/profile/views/profile_screen.dart';
+import 'package:iubrsa/app/views/home/views/app_drawer.dart';
 import 'package:iubrsa/app/views/register_a_trip/views/register_a_trip_screen.dart';
 import 'package:iubrsa/app/views/signin/views/signin_screen.dart';
 import 'package:iubrsa/app/views/trip_details/views/trip_details_screen.dart';
@@ -27,7 +26,6 @@ class ROUTES {
   static get getSigninScreenRoute => "/signin_screen";
   static get getSignupScreenRoute => "/signup_screen";
   static get getHomeframeRoute => "/homeframe";
-  static get getProfileScreenRoute => "/profile_screen";
   static get getRegisterATripScreenRoute => "/register_a_trip_screen";
   static get getTripDetailsScreenRoute => "/trip_details_screen";
   static get getNotificationScreenScreenRoute => "/notification_screen";
@@ -37,64 +35,41 @@ class ROUTES {
       name: getSplashScreenRoute,
       page: () => SplashScreen(),
       binding: SplashScreenBindings(),
-      transition: AppData.defaultTransition,
-      curve: AppData.defaultAnimationCurve,
     ),
     GetPage(
       name: getOnboardingScreenRoute,
       page: () => OnboardingScreen(),
       binding: OnboardingScreenBindings(),
-      transition: AppData.defaultTransition,
-      curve: AppData.defaultAnimationCurve,
     ),
     GetPage(
       name: getSigninScreenRoute,
       page: () => SigninScreen(),
       binding: SigninScreenBinding(),
-      transition: AppData.defaultTransition,
-      curve: AppData.defaultAnimationCurve,
     ),
     GetPage(
       name: getSignupScreenRoute,
       page: () => SignupScreen(),
       binding: SignupScreenBinding(),
-      transition: AppData.defaultTransition,
-      curve: AppData.defaultAnimationCurve,
     ),
     GetPage(
       name: getHomeframeRoute,
       page: () => Homeframe(),
       binding: HomeframeBindings(),
-      transition: AppData.defaultTransition,
-      curve: AppData.defaultAnimationCurve,
-    ),
-    GetPage(
-      name: getProfileScreenRoute,
-      page: () => ProfileScreen(),
-      binding: ProfileScreenBinding(),
-      transition: AppData.defaultTransition,
-      curve: AppData.defaultAnimationCurve,
     ),
     GetPage(
       name: getRegisterATripScreenRoute,
       page: () => RegisterATripScreen(),
       binding: RegisterATripScreenBinding(),
-      transition: AppData.defaultTransition,
-      curve: AppData.defaultAnimationCurve,
     ),
     GetPage(
       name: getTripDetailsScreenRoute,
       page: () => TripDetailsScreen(),
       binding: TripDetailsScreenBindings(),
-      transition: AppData.defaultTransition,
-      curve: AppData.defaultAnimationCurve,
     ),
     GetPage(
       name: getNotificationScreenScreenRoute,
       page: () => NotificationScreen(),
       binding: NotificationScreenBinding(),
-      transition: AppData.defaultTransition,
-      curve: AppData.defaultAnimationCurve,
     )
   ];
 }

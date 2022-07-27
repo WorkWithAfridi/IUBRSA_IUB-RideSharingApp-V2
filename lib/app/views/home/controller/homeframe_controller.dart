@@ -13,10 +13,6 @@ class HomeframController extends GetxController {
   var pageController = PageController().obs;
   var selectedActiveTripFilter = "Latest".obs;
 
-  onProfileImageClick() {
-    Get.toNamed(ROUTES.getProfileScreenRoute);
-  }
-
   showActiveTrips(String mode) {
     Get.to(
       () => ActiveTripsScreen(mode: mode),
@@ -35,6 +31,18 @@ class HomeframController extends GetxController {
 
   onNotificationBellbuttonClick() {
     Get.toNamed(ROUTES.getNotificationScreenScreenRoute);
+  }
+
+  onSignOutButtonClick() {
+    Get.offAllNamed(ROUTES.getSigninScreenRoute);
+  }
+
+  onRegisterATripButtonClick() {
+    Get.toNamed(ROUTES.getRegisterATripScreenRoute);
+  }
+
+  onSosCall999ButtonClick() {
+    UrlLauncherServices.makePhoneCall("999");
   }
 
   Future<void> onSoSButtonClick() {
@@ -160,18 +168,5 @@ class HomeframController extends GetxController {
         );
       },
     );
-  }
-
-  onHomeframeFloatingActionButtonClick() {
-    Get.toNamed(ROUTES.getRegisterATripScreenRoute);
-    // showCustomSnackbar(
-    //   title: "Hi, Khondakar Afridi.",
-    //   message: "Welcome aboard on ${AppData.appName}. \nRide safe. :)",
-    //   isSuccess: true,
-    // );
-  }
-
-  onSosCall999ButtonClick() {
-    UrlLauncherServices.makePhoneCall("999");
   }
 }

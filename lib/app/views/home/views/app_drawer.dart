@@ -1,59 +1,50 @@
 // ignore_for_file: unnecessary_const
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:iubrsa/app/views/profile/controller/profile_screen_controller.dart';
-import 'package:iubrsa/app/shared/widgets/custom_back_button.dart';
-import 'package:iubrsa/app/views/profile/widgets/settings_tile.dart';
+import 'package:iubrsa/app/views/home/controller/homeframe_controller.dart';
+import 'package:iubrsa/app/views/home/widgets/settings_tile.dart';
 import 'package:iubrsa/data/constants/app_data.dart';
 
 import '../../../shared/widgets/custom_divider.dart';
 
-class ProfileScreen extends StatefulWidget {
-  ProfileScreen({Key? key}) : super(key: key);
+class AppDrawer extends StatefulWidget {
+  AppDrawer({Key? key}) : super(key: key);
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<AppDrawer> createState() => _AppDrawerState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
-  ProfileScreenController controller = Get.find();
-
-  @override
-  void dispose() {
-    Get.delete<ProfileScreenController>();
-    super.dispose();
-  }
+class _AppDrawerState extends State<AppDrawer> {
+  HomeframController controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Profile",
-          style: AppData.boldTextStyle.copyWith(
-            color: AppData.darkBlueColor,
-          ),
-        ),
-        leading: GetBackButton(),
-      ),
-      body: SizedBox(
+    return SafeArea(
+      child: Container(
+        color: AppData.scaffoldBackgroundColor,
         height: Get.height,
-        width: Get.width,
+        width: Get.width * .8,
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
-          child: Padding(
-            padding: AppData.defaultPadding,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(
-                  height: 5,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              IconButton(
+                onPressed: () {
+                  Get.back();
+                },
+                icon: const Icon(
+                  FontAwesomeIcons.arrowLeft,
+                  size: 14,
+                  color: AppData.darkBlueColor,
                 ),
-                SizedBox(
+              ),
+              Padding(
+                padding: AppData.defaultPadding,
+                child: SizedBox(
                   width: double.maxFinite,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -156,10 +147,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Column(
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: AppData.defaultPadding,
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -233,9 +227,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       height: 150,
                     )
                   ],
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         ),
       ),
