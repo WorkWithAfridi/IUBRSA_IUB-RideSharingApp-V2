@@ -55,34 +55,15 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              const SizedBox(
+                height: 5,
+              ),
               Padding(
                 padding: AppData.defaultPadding,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // SizedBox(
-                    //   height: Get.height / 4,
-                    //   width: double.maxFinite,
-                    //   child: SvgPicture.asset(
-                    //     'assets/svgs/starman.svg',
-                    //   ),
-                    // ),
-                    // const SizedBox(
-                    //   height: 10,
-                    // ),
-                    Text(
-                      "Please fill up the following form\nto register a new trip! :)",
-                      style: AppData.lightTextStyle.copyWith(
-                        color: AppData.customDarkGrey,
-                        height: .95,
-                        fontSize: 13,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
                     RouteAndDestinationForm(),
                     const SizedBox(
                       height: 5,
@@ -159,7 +140,7 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
                       ],
                     ),
                     const SizedBox(
-                      height: 5,
+                      height: 15,
                     ),
                     Obx(
                       () => CustomButton(

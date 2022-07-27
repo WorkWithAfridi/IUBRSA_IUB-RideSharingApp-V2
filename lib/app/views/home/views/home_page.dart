@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/views/home/controller/homeframe_controller.dart';
 
 import '../../../../data/constants/app_data.dart';
-import '../../../shared/widgets/google_map.dart';
 import '../widgets/active_rides_around_you_tab.dart';
 import '../widgets/active_trips_tab.dart';
 import '../widgets/services_tab.dart';
-import '../widgets/shortcut.dart';
 import '../widgets/shortcuts_tab.dart';
 import '../widgets/travelling_with_tab.dart';
 

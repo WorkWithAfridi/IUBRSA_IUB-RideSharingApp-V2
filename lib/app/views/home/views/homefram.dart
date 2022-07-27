@@ -5,8 +5,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/views/home/controller/homeframe_controller.dart';
 import 'package:iubrsa/app/views/chat/views/chatpage.dart';
-import 'package:iubrsa/app/views/home/views/homepage.dart';
+import 'package:iubrsa/app/views/home/views/home_page.dart';
 import 'package:iubrsa/app/views/home/views/app_drawer.dart';
+import 'package:iubrsa/app/views/home/views/past_trips_page.dart';
 
 import '../../../../data/constants/app_data.dart';
 
@@ -28,11 +29,7 @@ class _HomeframeState extends State<Homeframe> {
   List<Widget> homeframe_pages = [
     Homepage(),
     Chatpage(),
-    Container(
-      child: Center(
-        child: Text("Test"),
-      ),
-    ),
+    PastTrips(),
     Container(
       child: Center(
         child: Text("Test"),

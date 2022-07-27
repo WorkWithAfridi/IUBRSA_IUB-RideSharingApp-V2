@@ -13,13 +13,6 @@ class RouteAndDestinationForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
-          'Routes and destination',
-          style: AppData.boldTextStyle,
-        ),
-        const SizedBox(
-          height: 5,
-        ),
         Row(
           children: [
             Expanded(
