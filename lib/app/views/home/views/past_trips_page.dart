@@ -301,6 +301,15 @@ class PastTrips extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                RotatedBox(
+                                  quarterTurns: 3,
+                                  child: Text(
+                                    "23/06/22",
+                                    style: AppData.regularTextStyle.copyWith(
+                                      color: AppData.customWhite,
+                                    ),
+                                  ),
+                                )
                               ],
                             ),
                           ),

@@ -1,7 +1,5 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:iubrsa/app/views/home/controller/homeframe_controller.dart';
 import 'package:iubrsa/app/views/chat/views/chatpage.dart';
@@ -32,12 +30,7 @@ class _HomeframeState extends State<Homeframe> {
     PastTrips(),
     Container(
       child: Center(
-        child: Text("Test"),
-      ),
-    ),
-    Container(
-      child: Center(
-        child: Text("Test"),
+        child: Text("Work in progress"),
       ),
     ),
   ];

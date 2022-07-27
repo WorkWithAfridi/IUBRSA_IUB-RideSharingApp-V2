@@ -44,7 +44,7 @@ class ActiveRideCard extends StatelessWidget {
                   width: double.maxFinite,
                   // color: Colors.red,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
@@ -134,16 +134,13 @@ class ActiveRideCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 5,
-                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
                             "Seats\nAvailable:",
-                            style: AppData.boldTextStyle.copyWith(
+                            style: AppData.regularTextStyle.copyWith(
                               fontSize: 14,
                               height: .95,
                               color: AppData.customWhite,
