@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -76,7 +75,7 @@ class SeatAndTimeTab extends StatelessWidget {
                     height: 30,
                     width: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: AppData.royalBlueColor,
                       borderRadius: BorderRadius.circular(5),
                     ),
                     alignment: Alignment.center,
@@ -144,7 +143,7 @@ class SeatAndTimeTab extends StatelessWidget {
                   height: 30,
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   decoration: BoxDecoration(
-                    color: Colors.black,
+                    color: AppData.royalBlueColor,
                     borderRadius: BorderRadius.circular(5),
                   ),
                   alignment: Alignment.center,

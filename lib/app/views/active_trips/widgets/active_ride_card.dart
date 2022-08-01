@@ -1,5 +1,5 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../data/constants/app_data.dart';
@@ -233,7 +233,7 @@ class ActiveRideCard extends StatelessWidget {
               Flexible(
                 flex: 1,
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppData.customWhite,
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(AppData.defaultBorderRadius),
@@ -247,33 +247,86 @@ class ActiveRideCard extends StatelessWidget {
                   ),
                   height: double.maxFinite,
                   width: double.maxFinite,
-                  child: Column(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 5,
+                          ),
+                          child: RotatedBox(
+                            quarterTurns: 3,
+                            child: BarcodeWidget(
+                              barcode: Barcode.code128(),
+                              data: "HelloWorld12345678901234567890",
+                              color: AppData.darkBlueColor,
+                              style: AppData.lightTextStyle.copyWith(
+                                color: AppData.darkBlueColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
                       Flexible(
                         flex: 2,
                         child: SizedBox(
                           height: double.maxFinite,
                           width: double.maxFinite,
-                          child: SvgPicture.asset(
-                            'assets/svgs/car.svg',
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        flex: 1,
-                        child: SizedBox(
-                          height: double.maxFinite,
-                          width: double.maxFinite,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                mode == "From" ? "To" : "From",
+                                "From",
                                 style: AppData.lightTextStyle.copyWith(
                                   fontSize: 12,
                                 ),
                               ),
                               Text(
                                 "Baily road",
+                                style: AppData.boldTextStyle.copyWith(
+                                  fontSize: 14,
+                                  height: .95,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "Vehicle",
+                                style: AppData.lightTextStyle.copyWith(
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Text(
+                                "Uber",
+                                style: AppData.boldTextStyle.copyWith(
+                                  fontSize: 14,
+                                  height: .95,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                "License",
+                                style: AppData.lightTextStyle.copyWith(
+                                  fontSize: 12,
+                                ),
+                              ),
+                              Text(
+                                "ABC-123-XYZ",
                                 style: AppData.boldTextStyle.copyWith(
                                   fontSize: 14,
                                   height: .95,

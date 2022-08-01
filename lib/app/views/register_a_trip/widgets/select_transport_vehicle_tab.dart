@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../../data/constants/app_data.dart';
@@ -37,78 +36,26 @@ class SelectTransportVehicleTab extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 70,
-                      padding: AppData.defaultPadding,
-                      width: 90,
-                      decoration: BoxDecoration(
-                        color: AppData.customWhite,
-                        borderRadius: BorderRadius.circular(
-                          AppData.defaultBorderRadius,
-                        ),
-                        border: Border.all(
-                          width: 1,
-                          color:
-                              controller.selectedTransportationVehicle.value ==
-                                      "Car"
-                                  ? AppData.darkBlueColor
-                                  : AppData.customWhite,
+                    Chip(
+                      label: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          "Car",
+                          style: AppData.regularTextStyle.copyWith(
+                            color: controller
+                                        .selectedTransportationVehicle.value ==
+                                    "Car"
+                                ? AppData.customWhite
+                                : AppData.darkBlueColor,
+                          ),
                         ),
                       ),
-                      child: SvgPicture.asset(
-                        'assets/svgs/car_for_trip_registration.svg',
-                      ),
+                      backgroundColor:
+                          controller.selectedTransportationVehicle.value ==
+                                  "Car"
+                              ? AppData.royalBlueColor
+                              : AppData.customWhite,
                     ),
-                    const SizedBox(
-                      height: 2,
-                    ),
-                    const Text(
-                      "Car",
-                      style: AppData.regularTextStyle,
-                    )
-                  ],
-                ),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              GestureDetector(
-                onTap: () {
-                  controller.selectedTransportationVehicle.value = "Auto";
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: 70,
-                      padding: AppData.defaultPadding,
-                      width: 90,
-                      decoration: BoxDecoration(
-                        color: AppData.customWhite,
-                        borderRadius: BorderRadius.circular(
-                          AppData.defaultBorderRadius,
-                        ),
-                        border: Border.all(
-                          width: 1,
-                          color:
-                              controller.selectedTransportationVehicle.value ==
-                                      "Auto"
-                                  ? AppData.darkBlueColor
-                                  : AppData.customWhite,
-                        ),
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/svgs/auto_rickshaw_for_trip_registration.svg',
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 2,
-                    ),
-                    const Text(
-                      "Auto",
-                      style: AppData.regularTextStyle,
-                    )
                   ],
                 ),
               ),
@@ -123,38 +70,97 @@ class SelectTransportVehicleTab extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 70,
-                      padding: AppData.defaultPadding,
-                      width: 90,
-                      decoration: BoxDecoration(
-                        color: AppData.customWhite,
-                        borderRadius: BorderRadius.circular(
-                          AppData.defaultBorderRadius,
-                        ),
-                        border: Border.all(
-                          width: 1,
-                          color:
-                              controller.selectedTransportationVehicle.value ==
-                                      "Bike"
-                                  ? AppData.darkBlueColor
-                                  : AppData.customWhite,
+                    Chip(
+                      label: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          "Bike",
+                          style: AppData.regularTextStyle.copyWith(
+                            color: controller
+                                        .selectedTransportationVehicle.value ==
+                                    "Bike"
+                                ? AppData.customWhite
+                                : AppData.darkBlueColor,
+                          ),
                         ),
                       ),
-                      child: SvgPicture.asset(
-                        'assets/svgs/motorbike_for_trip_registration.svg',
-                      ),
+                      backgroundColor:
+                          controller.selectedTransportationVehicle.value ==
+                                  "Bike"
+                              ? AppData.royalBlueColor
+                              : AppData.customWhite,
                     ),
-                    const SizedBox(
-                      height: 2,
-                    ),
-                    const Text(
-                      "Bike",
-                      style: AppData.regularTextStyle,
-                    )
                   ],
                 ),
-              )
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              GestureDetector(
+                onTap: () {
+                  controller.selectedTransportationVehicle.value = "Auto";
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Chip(
+                      label: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          "Auto",
+                          style: AppData.regularTextStyle.copyWith(
+                            color: controller
+                                        .selectedTransportationVehicle.value ==
+                                    "Auto"
+                                ? AppData.customWhite
+                                : AppData.darkBlueColor,
+                          ),
+                        ),
+                      ),
+                      backgroundColor:
+                          controller.selectedTransportationVehicle.value ==
+                                  "Auto"
+                              ? AppData.royalBlueColor
+                              : AppData.customWhite,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              GestureDetector(
+                onTap: () {
+                  controller.selectedTransportationVehicle.value = "Uber";
+                },
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Chip(
+                      label: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          "Uber",
+                          style: AppData.regularTextStyle.copyWith(
+                            color: controller
+                                        .selectedTransportationVehicle.value ==
+                                    "Uber"
+                                ? AppData.customWhite
+                                : AppData.darkBlueColor,
+                          ),
+                        ),
+                      ),
+                      backgroundColor:
+                          controller.selectedTransportationVehicle.value ==
+                                  "Uber"
+                              ? AppData.royalBlueColor
+                              : AppData.customWhite,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

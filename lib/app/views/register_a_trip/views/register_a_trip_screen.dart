@@ -1,14 +1,10 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:iubrsa/app/views/register_a_trip/controller/register_a_trip_screen_controller.dart';
 import 'package:iubrsa/app/shared/widgets/custom_back_button.dart';
 import 'package:iubrsa/app/shared/widgets/custom_button.dart';
 import 'package:iubrsa/app/shared/widgets/custom_divider.dart';
-import 'package:iubrsa/app/shared/widgets/custom_text_field.dart';
+import 'package:iubrsa/app/views/register_a_trip/controller/register_a_trip_screen_controller.dart';
 
 import '../../../../data/constants/app_data.dart';
 import '../widgets/fare_form.dart';
@@ -19,7 +15,7 @@ import '../widgets/select_transport_vehicle_tab.dart';
 import '../widgets/vehicle_registration_number_form.dart';
 
 class RegisterATripScreen extends StatefulWidget {
-  RegisterATripScreen({Key? key}) : super(key: key);
+  const RegisterATripScreen({Key? key}) : super(key: key);
 
   @override
   State<RegisterATripScreen> createState() => _RegisterATripScreenState();
@@ -58,17 +54,48 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
               const SizedBox(
                 height: 5,
               ),
+              const Text(
+                'Registration id',
+                style: AppData.boldTextStyle,
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              SizedBox(
+                height: 100,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 25,
+                    vertical: 10,
+                  ),
+                  child: BarcodeWidget(
+                    barcode: Barcode.code128(),
+                    data: "HelloWorld12345678901234567890",
+                    color: AppData.darkBlueColor,
+                    style: AppData.lightTextStyle.copyWith(
+                      color: AppData.darkBlueColor,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
               Padding(
                 padding: AppData.defaultPadding,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 35.0),
+                      child: CustomDivider(),
+                    ),
                     RouteAndDestinationForm(),
-                    const SizedBox(
+                    SizedBox(
                       height: 5,
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.symmetric(horizontal: 35.0),
                       child: CustomDivider(),
                     ),
@@ -89,7 +116,7 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    RouteDescriptionForm(),
+                    const RouteDescriptionForm(),
                     const SizedBox(
                       height: 5,
                     ),
@@ -105,7 +132,7 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
                       padding: EdgeInsets.symmetric(horizontal: 35.0),
                       child: CustomDivider(),
                     ),
-                    FareForm(),
+                    const FareForm(),
                     const SizedBox(
                       height: 5,
                     ),
@@ -113,7 +140,7 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
                       padding: EdgeInsets.symmetric(horizontal: 35.0),
                       child: CustomDivider(),
                     ),
-                    VehicleRegistrationNumberForm(),
+                    const VehicleRegistrationNumberForm(),
                     const SizedBox(
                       height: 20,
                     ),
@@ -140,7 +167,7 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
                       ],
                     ),
                     const SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
                     Obx(
                       () => CustomButton(

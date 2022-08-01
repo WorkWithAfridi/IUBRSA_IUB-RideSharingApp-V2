@@ -1,5 +1,6 @@
 // ignore_for_file: unnecessary_const
 
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -10,7 +11,7 @@ import 'package:iubrsa/data/constants/app_data.dart';
 import '../../../shared/widgets/custom_divider.dart';
 
 class AppDrawer extends StatefulWidget {
-  AppDrawer({Key? key}) : super(key: key);
+  const AppDrawer({Key? key}) : super(key: key);
 
   @override
   State<AppDrawer> createState() => _AppDrawerState();
@@ -175,28 +176,28 @@ class _AppDrawerState extends State<AppDrawer> {
                     ),
                     SettingsTile(
                       title: "Account",
-                      icon: Icons.person,
+                      icon: FluentSystemIcons.ic_fluent_person_regular,
                       callBackFunction: () {},
                       color: Colors.blue,
                     ),
                     const CustomDivider(),
                     SettingsTile(
                       title: 'Chat',
-                      icon: Icons.chat,
+                      icon: FluentSystemIcons.ic_fluent_chat_regular,
                       callBackFunction: () {},
                       color: Colors.orange,
                     ),
                     const CustomDivider(),
                     SettingsTile(
                       title: 'Storage',
-                      icon: Icons.storage,
+                      icon: FluentSystemIcons.ic_fluent_storage_regular,
                       callBackFunction: () {},
                       color: Colors.blueAccent,
                     ),
                     const CustomDivider(),
                     SettingsTile(
                       title: 'Notification',
-                      icon: Icons.notifications,
+                      icon: Icons.notifications_active_outlined,
                       callBackFunction: () {},
                       color: Colors.amber,
                     ),
@@ -210,14 +211,14 @@ class _AppDrawerState extends State<AppDrawer> {
                     const CustomDivider(),
                     SettingsTile(
                       title: "Help Center",
-                      icon: Icons.help_center,
+                      icon: FluentSystemIcons.ic_fluent_help_circle_regular,
                       callBackFunction: () {},
                       color: Colors.greenAccent,
                     ),
                     const CustomDivider(),
                     SettingsTile(
                       title: "Signout",
-                      icon: Icons.logout,
+                      icon: FluentSystemIcons.ic_fluent_sign_out_regular,
                       callBackFunction: () {
                         controller.onSignOutButtonClick();
                       },

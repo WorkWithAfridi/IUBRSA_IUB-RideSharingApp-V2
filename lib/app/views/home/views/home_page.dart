@@ -68,7 +68,7 @@ class Homepage extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          TravellingWithTab(),
+          const TravellingWithTab(),
           const SizedBox(
             height: 20,
           ),
@@ -80,7 +80,7 @@ class Homepage extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          ServicesTab(),
+          const ServicesTab(),
         ],
       ),
     );

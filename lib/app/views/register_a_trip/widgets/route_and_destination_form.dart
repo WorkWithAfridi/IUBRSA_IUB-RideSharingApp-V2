@@ -13,6 +13,10 @@ class RouteAndDestinationForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const Text(
+          'Source and destination',
+          style: AppData.boldTextStyle,
+        ),
         Row(
           children: [
             Expanded(
@@ -33,7 +37,7 @@ class RouteAndDestinationForm extends StatelessWidget {
                                 height: 15,
                                 width: 15,
                                 decoration: BoxDecoration(
-                                  color: AppData.darkBlueColor,
+                                  color: AppData.royalBlueColor,
                                   borderRadius: BorderRadius.circular(15),
                                 ),
                               ),
@@ -53,7 +57,7 @@ class RouteAndDestinationForm extends StatelessWidget {
                               Container(
                                 height: 62,
                                 width: 2,
-                                color: AppData.darkBlueColor,
+                                color: AppData.royalBlueColor,
                               ),
                               const SizedBox(
                                 width: 1,
@@ -96,7 +100,7 @@ class RouteAndDestinationForm extends StatelessWidget {
                       Container(
                         height: 10,
                         width: 2,
-                        color: AppData.darkBlueColor,
+                        color: AppData.royalBlueColor,
                       ),
                     ],
                   ),
@@ -111,7 +115,7 @@ class RouteAndDestinationForm extends StatelessWidget {
                             height: 15,
                             width: 15,
                             decoration: BoxDecoration(
-                              color: AppData.darkBlueColor,
+                              color: AppData.royalBlueColor,
                               borderRadius: BorderRadius.circular(15),
                             ),
                           ),
@@ -162,6 +166,7 @@ class RouteAndDestinationForm extends StatelessWidget {
                 quarterTurns: 1,
                 child: Icon(
                   FontAwesomeIcons.arrowRightArrowLeft,
+                  color: AppData.royalBlueColor,
                   size: 15,
                 ),
               ),
