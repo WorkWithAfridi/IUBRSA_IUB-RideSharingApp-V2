@@ -35,7 +35,7 @@ class SettingsTile extends StatelessWidget {
           ),
           Text(
             title,
-            style: AppData.boldTextStyle,
+            style: AppData.regularTextStyle,
           )
         ],
       ),

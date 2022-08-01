@@ -323,7 +323,7 @@ class TravellingWithTicket extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "From",
+                                "From:",
                                 style: AppData.lightTextStyle.copyWith(
                                   fontSize: 12,
                                 ),
@@ -337,10 +337,10 @@ class TravellingWithTicket extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(
-                                width: 10,
+                                height: 2,
                               ),
                               Text(
-                                "Vehicle",
+                                "Vehicle:",
                                 style: AppData.lightTextStyle.copyWith(
                                   fontSize: 12,
                                 ),
@@ -354,10 +354,10 @@ class TravellingWithTicket extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(
-                                width: 10,
+                                height: 2,
                               ),
                               Text(
-                                "License",
+                                "License:",
                                 style: AppData.lightTextStyle.copyWith(
                                   fontSize: 12,
                                 ),
