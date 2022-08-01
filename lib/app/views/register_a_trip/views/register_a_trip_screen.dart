@@ -53,7 +53,9 @@ class _RegisterATripScreenState extends State<RegisterATripScreen> {
               Padding(
                 padding: AppData.defaultPadding,
                 child: DottedBorder(
+                  borderType: BorderType.RRect,
                   color: Colors.black.withOpacity(.5),
+                  radius: const Radius.circular(AppData.defaultBorderRadius),
                   dashPattern: const [8, 4],
                   strokeWidth: 0.5,
                   child: Container(
