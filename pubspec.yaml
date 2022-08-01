@@ -30,6 +30,7 @@ dependencies:
   barcode_widget: ^2.0.2
   connectivity_plus: ^2.3.5
   cupertino_icons: ^1.0.2
+  dotted_border: ^2.0.0+2
   fluentui_icons: ^1.0.0
   flutter:
     sdk: flutter

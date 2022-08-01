@@ -22,149 +22,75 @@ class SelectTransportVehicleTab extends StatelessWidget {
         const SizedBox(
           height: 10,
         ),
-        Obx(
-          () => Row(
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
+          child: Row(
             children: [
               const SizedBox(
                 width: 20,
               ),
-              GestureDetector(
-                onTap: () {
-                  controller.selectedTransportationVehicle.value = "Car";
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Chip(
-                      label: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Text(
-                          "Car",
-                          style: AppData.regularTextStyle.copyWith(
-                            color: controller
-                                        .selectedTransportationVehicle.value ==
-                                    "Car"
-                                ? AppData.customWhite
-                                : AppData.darkBlueColor,
-                          ),
-                        ),
-                      ),
-                      backgroundColor:
-                          controller.selectedTransportationVehicle.value ==
-                                  "Car"
-                              ? AppData.royalBlueColor
-                              : AppData.customWhite,
-                    ),
-                  ],
-                ),
+              VehicleTypeSelectionChip(
+                type: "Car",
               ),
               const SizedBox(
                 width: 10,
               ),
-              GestureDetector(
-                onTap: () {
-                  controller.selectedTransportationVehicle.value = "Bike";
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Chip(
-                      label: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Text(
-                          "Bike",
-                          style: AppData.regularTextStyle.copyWith(
-                            color: controller
-                                        .selectedTransportationVehicle.value ==
-                                    "Bike"
-                                ? AppData.customWhite
-                                : AppData.darkBlueColor,
-                          ),
-                        ),
-                      ),
-                      backgroundColor:
-                          controller.selectedTransportationVehicle.value ==
-                                  "Bike"
-                              ? AppData.royalBlueColor
-                              : AppData.customWhite,
-                    ),
-                  ],
-                ),
+              VehicleTypeSelectionChip(
+                type: "Bike",
               ),
               const SizedBox(
                 width: 10,
               ),
-              GestureDetector(
-                onTap: () {
-                  controller.selectedTransportationVehicle.value = "Auto";
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Chip(
-                      label: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Text(
-                          "Auto",
-                          style: AppData.regularTextStyle.copyWith(
-                            color: controller
-                                        .selectedTransportationVehicle.value ==
-                                    "Auto"
-                                ? AppData.customWhite
-                                : AppData.darkBlueColor,
-                          ),
-                        ),
-                      ),
-                      backgroundColor:
-                          controller.selectedTransportationVehicle.value ==
-                                  "Auto"
-                              ? AppData.royalBlueColor
-                              : AppData.customWhite,
-                    ),
-                  ],
-                ),
+              VehicleTypeSelectionChip(
+                type: "Auto - CNG",
               ),
               const SizedBox(
                 width: 10,
               ),
-              GestureDetector(
-                onTap: () {
-                  controller.selectedTransportationVehicle.value = "Uber";
-                },
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Chip(
-                      label: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: Text(
-                          "Uber",
-                          style: AppData.regularTextStyle.copyWith(
-                            color: controller
-                                        .selectedTransportationVehicle.value ==
-                                    "Uber"
-                                ? AppData.customWhite
-                                : AppData.darkBlueColor,
-                          ),
-                        ),
-                      ),
-                      backgroundColor:
-                          controller.selectedTransportationVehicle.value ==
-                                  "Uber"
-                              ? AppData.royalBlueColor
-                              : AppData.customWhite,
-                    ),
-                  ],
-                ),
+              VehicleTypeSelectionChip(
+                type: "Uber",
+              ),
+              const SizedBox(
+                width: 20,
               ),
             ],
           ),
         ),
       ],
+    );
+  }
+}
+
+class VehicleTypeSelectionChip extends StatelessWidget {
+  VehicleTypeSelectionChip({Key? key, required this.type}) : super(key: key);
+
+  final RegisterATripScreenController controller = Get.find();
+  final String type;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        controller.selectedTransportationVehicle.value = type;
+      },
+      child: Obx(() => Chip(
+            label: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Text(
+                type,
+                style: AppData.regularTextStyle.copyWith(
+                  color: controller.selectedTransportationVehicle.value == type
+                      ? AppData.customWhite
+                      : AppData.darkBlueColor,
+                ),
+              ),
+            ),
+            backgroundColor:
+                controller.selectedTransportationVehicle.value == type
+                    ? AppData.royalBlueColor
+                    : AppData.scaffoldBackgroundColor,
+          )),
     );
   }
 }
